@@ -4,9 +4,13 @@
 1. Silahkan melakukan clone pada repository ini
 
 2. Setelah melakukan clone ketikan di terminal perintah berikut. Bertujuan agar APP KEY update otomatis dan vendor akan terinstal
-    <p style="text-align:center;">php artisan key:generate</p>
-    <p style="text-align:center;">composer update</p>
-
+     ```shell
+        php artisan key:generate
+     ```
+      ```shell
+        composer update
+     ```
+     
 3. Install beberapa package berikut
     - Laravel Debugbar -> Untuk membantu proses debug
         ```shell
@@ -29,5 +33,5 @@
 4. Untuk halaman admin bisa menggunakan template
     <ul>
         <li> <a href="https://getstisla.com/">STISLA</a></li>
-        <li> <a href="https://coreui.io/">STISLA</a></li>
+        <li> <a href="https://coreui.io/">Core UI</a></li>
     <ul>
