@@ -5,12 +5,14 @@
 
 2. Setelah melakukan clone ketikan di terminal perintah berikut. Bertujuan agar APP KEY update otomatis dan vendor akan terinstal
      ```shell
-        php artisan key:generate
-     ```
-      ```shell
         composer update
      ```
-     
+     ```shell
+        cp .env.example .env
+     ```
+     ```shell
+        php artisan key:generate
+     ```
 3. Install beberapa package berikut
     - Laravel Debugbar -> Untuk membantu proses debug
         ```shell
