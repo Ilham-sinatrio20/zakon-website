@@ -1,9 +1,9 @@
-<h1 style="text-align:center; font-weight:bolder;">Catatan Sebelum Mengclone Zakon Website</h1>
+<h1 style="text-align:center; font-weight:bolder;">Catatan Sebelum Melakukan Kloning Zakon Website</h1>
 
 ## Beberapa Catatan Terkait Penggunaan Repository Ini
-1. Silahkan melakukan clone pada repository ini
+1. Silahkan melakukan kloning pada repository ini dengan meng-copy url repository
 
-2. Setelah melakukan clone ketikan di terminal perintah berikut. Bertujuan agar APP KEY update otomatis dan vendor akan terinstal
+2. Setelah melakukan kloning ketikan di terminal perintah berikut. Bertujuan agar APP KEY update otomatis dan vendor akan terinstal serta .env akan terbentuk
      ```shell
         composer update
      ```
