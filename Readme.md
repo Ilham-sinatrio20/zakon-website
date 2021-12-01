@@ -31,6 +31,9 @@
         composer require doctrine/dbal
         ```
     - NPM run watch (Untuk menginstal browsersync agar saat ada update halaman web tidak perlu direfresh serta localhost akan berjalan di port:3000, umumnya laravel ada pada port:5000)
+        ```shell
+        npm run watch
+        ```
 
 4. Untuk halaman admin bisa menggunakan template
     <ul>
