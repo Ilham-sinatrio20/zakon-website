@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LawyerController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-<<<<<<< HEAD
 Route::get('/lawyer', function () {
     return view('lawyer');
 });
@@ -30,8 +30,6 @@ Route::get('lawyer/lawyer1', function () {
 
 Route::get('/lawyer@ekonomi',[LawyerController::class, 'showLayer']);
 
-=======
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
->>>>>>> c2d0e55bcf7d763c03e61d09107a3eea15bc81e5
