@@ -26,11 +26,20 @@ class TransaksiController extends Controller {
     }
 
     public function cetakTiket($id){
-
+        $tiket = Transaksi::join('lawyer', 'transaksi.lawyer_id', '=', 'lawyer.id')->where('id_transaksi', $id);
+        $pdf = PDF::loadview(compact('tiket'))->setPaper('a4', 'landscape');
+        return $pdf->stream();
     }
 
-    public function updateTicket($id){
-
+    public function updateTicket(TransaksiRequest $trace, $id){
+        $tiket = Transaksi::where('id_transaksi', $id)->orderBy('tgl_meet', 'desc')->first();
+        $tiket->nama_klien = $trace->nama_klien;
+        $tiket->phone = $trace->phone;
+        $tiket->tgl_meet = $trace->tgl_meet;
+        $tiket->status = $trace->status;
+        $tiket->keterangan = $trace->keterangan;
+        $tiket->save();
+        return response()->json(["Data berhasil diupdate"]);
     }
 
     public function inputTicket(TransaksiRequest $req) {
