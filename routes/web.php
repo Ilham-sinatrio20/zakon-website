@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LawyerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/lawyer', function () {
+    return view('lawyer');
+});
+
+Route::get('lawyer/lawyer1', function () {
+    return view('lawyer.lawyer1');
+});
+
+
+Route::get('/lawyer@ekonomi',[LawyerController::class, 'showLayer']);
+
