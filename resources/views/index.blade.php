@@ -561,7 +561,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <input type="checkbox" id="setuju" name="setuju" value="setuju">
-                                    <label for="setuju">Menyetujui ketentuan pertemuan online & offline</label><br>
+                                    <label for="setuju">Menyetujui ketentuan online & offline</label><br>
                                 </div>
                                 <br><br>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">

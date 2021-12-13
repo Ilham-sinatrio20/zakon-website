@@ -30,6 +30,7 @@
 }
 
 .cbp,
+.cbp-popup-singlePage,
 .cbp-wrapper,
 .cbp-item {
     filter: inherit
@@ -3390,6 +3391,108 @@
 
 .cbp-l-grid-team {
     /* visibility: hidden */
+}
+
+
+/* 
+.cbp-popup-singlePage .cbp-l-grid-team .cbp-item {
+    width: 250px;
+    height: 258px
+}
+
+.cbp-popup-singlePage .cbp-caption {
+    width: 250px;
+    height: 258px
+}
+
+.cbp-popup-singlePage .cbp-l-grid-team-name {
+    width: 250px;
+    height: 258px
+}
+
+.cbp-popup-singlePage .cbp-l-grid-team-name:hover {
+    color: #5e3c03
+}
+
+.cbp-popup-singlePage .cbp-l-grid-team-position {
+    font: italic 400 13px "Open Sans", sans-serif;
+    color: #888;
+    text-align: center
+}
+
+.cbp-popup-singlePage .cbp-l-filters-button {
+    margin: 0 auto 30px;
+    text-align: left
+}
+
+.cbp-popup-singlePage .cbp-l-filters-button .cbp-filter-item {
+    background-color: #FFF;
+    border: 2px solid #ECECEC;
+    border-radius: 5px;
+    color: #888;
+    cursor: pointer;
+    font: 400 12px/29px "Open Sans", sans-serif;
+    margin: 10px 10px 0 0;
+    overflow: visible;
+    padding: 0 17px;
+    position: relative;
+    display: inline-block;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out
+}
+
+.cbp-popup-singlePage .cbp-l-filters-button .cbp-filter-item:hover {
+    color: #5d5d5d
+}
+
+.cbp-popup-singlePage .cbp-l-filters-button .cbp-filter-item.cbp-filter-item-active {
+    background-color: #5d5d5d;
+    color: #fff;
+    border-color: #5d5d5d
+} */
+
+.cbp-l-filters-button .cbp-filter-counter {
+    background-color: #3288C4;
+    border-radius: 3px;
+    color: #fff;
+    font: 400 11px/18px "Open Sans", sans-serif;
+    margin: 0 auto;
+    padding: 4px 0;
+    text-align: center;
+    width: 34px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transition: opacity .25s ease, bottom .25s ease;
+    transition: opacity .25s ease, bottom .25s ease
+}
+
+.cbp-l-filters-button .cbp-filter-counter:before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #3288C4;
+    display: none
+}
+
+.cbp-l-filters-button .cbp-filter-item:hover .cbp-filter-counter:before {
+    display: block
+}
+
+.cbp-l-filters-button .cbp-filter-item:hover .cbp-filter-counter {
+    bottom: 44px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    opacity: 1
 }
 
 .cbp-l-grid-team .cbp-item {

@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LawyerController;
 use Illuminate\Support\Facades\Auth;
@@ -33,3 +34,4 @@ Route::get('/lawyer@ekonomi',[LawyerController::class, 'showLayer']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

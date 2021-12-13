@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Requests;
-
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Foundation\Http\FormRequest;
 
 class TransaksiRequest extends FormRequest
@@ -21,8 +22,7 @@ class TransaksiRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
-    {
+    public function rules() {
         switch($this->method()){
             case 'POST': {
                 return [
@@ -33,7 +33,19 @@ class TransaksiRequest extends FormRequest
                     'keterangan' => 'required|string'
                 ];
             } break;
+            case 'PUT': {
+                return [
+                    'lawyer_id' => 'sometimes|integer',
+                    'nama_klien' => 'sometimes|string',
+                    'phone' => 'sometimes|string|max:15',
+                    'tgl_meet' => 'date|sometimes',
+                    'keterangan' => 'sometimes|string'
+                ];
+            } break;
         }
+    }
 
+    protected function failedValidation(Validator $validator) {
+        throw new HttpResponseException(response()->json($validator->errors()->all(), 422));
     }
 }
