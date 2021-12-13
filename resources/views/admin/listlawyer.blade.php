@@ -2,18 +2,18 @@
 
 @section('content')
     <div class="section-header">
-            <h1>Posts</h1>
+            <h1>List Lawyer</h1>
             <div class="section-header-button">
               <a href="/admin/add-lawyer" class="btn btn-primary">Add New</a>
             </div>
             <div class="section-header-breadcrumb">
               <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-              <div class="breadcrumb-item"><a href="#">Posts</a></div>
-              <div class="breadcrumb-item">All Posts</div>
+              <div class="breadcrumb-item"><a href="/home">Admin</a></div>
+              <div class="breadcrumb-item">List Lawyer</div>
             </div>
           </div>
           <div class="section-body">
-            <h2 class="section-title">Posts</h2>
+            <h2 class="section-title">Lawyer</h2>
             <p class="section-lead">
               You can manage all posts, such as editing, deleting and more.
             </p>
@@ -49,6 +49,11 @@
                   <div class="card-header">
                     <h4>All Posts</h4>
                   </div>
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
                   <div class="card-body">
                     <div class="float-left">
                       <select class="form-control selectric">
@@ -72,17 +77,17 @@
                     <div class="clearfix mb-3"></div>
 
                     <div class="table-responsive">
-                      <table class="table table-striped http://127.0.0.1:8000/" style="border-spacing: 7px;">
+                      <table class="table table-striped">
                             <thead class="text-center align-middle">
                             <tr>
-                                <th>No</th>
-                                <th>Picture</th>
-                                <th>Nama</th>
-                                <th>Jenis Hukum</th>
-                                <th>Tanggal Lahir</th>
-                                <th>No HP</th>
-                                <th>Alamat</th>
-                                <th>Email</th>
+                                <th scope="col">No</th>
+                                <th scope="col">Picture</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Jenis Hukum</th>
+                                <th scope="col">Tanggal Lahir</th>
+                                <th scope="col">No HP</th>
+                                <th scope="col">Alamat</th>
+                                <th scope="col">Email</th>
                             </tr>
                             </thead>
                             <?php $i = 1; ?>
@@ -95,11 +100,17 @@
                                     <td class="text-truncate">
                                         {{ $lawyers->nama_lawyer }}
                                         <div class="table-links">
-                                            <a href="/admin/detail-lawyer">View</a>
-                                            <div class="bullet"></div>
-                                            <a href="/admin/edit-lawyer">Edit</a>
-                                            <div class="bullet"></div>
-                                            <a href="/admin/delete-lawyer" class="text-danger">Trash</a>
+                                            <form action="{{ route('admin.delete', $lawyers->id) }}" method="POST" enctype="multipart/form-data">
+                                                <a href="{{ route('admin.detail', $lawyers->id) }}">View</a>
+                                                <div class="bullet"></div>
+                                                <a href="{{ route('admin.edit', $lawyers->id) }}">Edit</a>
+                                                <div class="bullet"></div>
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="text-danger" style="border: none; font-style: normal;background: none;padding: 0;">
+                                                    Trash
+                                                </button>
+                                            </form>
                                         </div>
                                     </td>
                                     <td class="text-nowrap">

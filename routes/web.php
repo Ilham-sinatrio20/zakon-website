@@ -37,19 +37,17 @@ Route::get('admin/transaction', function(){
     return view('admin.transaction');
 });
 
-Route::get('admin/detail-lawyer', function(){
+Route::get('admin/{id}/edit', [LawyerController::class, 'showByID'])->name('admin.edit');
+
+Route::get('admin/{id}/detail-lawyer', function(){
     return view('admin.detail-lawyer');
-});
+})->name('admin.detail');
 
-Route::put('admin/edit-lawyer', function(){
-    return view('admin.edit-lawyer');
-});
+Route::put('admin/{id}/edit-lawyer', [LawyerController::class, 'updateLawyer'])->name('admin.update');
 
-Route::delete('admin/delete-lawyer', function(){
-    return view('admin.delete-lawyer');
-});
+Route::delete('admin/{id}/delete-lawyer', [LawyerController::class, 'delete'])->name('admin.delete');
 
-Route::get('admin/list-lawyer', [LawyerController::class, 'index']);
+Route::get('admin/list-lawyer', [LawyerController::class, 'index'])->name('admin.list-lawyer');
 
 Route::get('admin/add-lawyer', function(){
     return view('admin.addlawyer');

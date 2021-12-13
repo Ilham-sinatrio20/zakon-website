@@ -52,8 +52,8 @@ class LawyerController extends Controller
     }
 
     public function showByID($id){
-        $lawyer = Lawyer::where('id', $id)->get();
-        return response()->json(['lawyer' => $lawyer]);
+        $lawyers = Lawyer::where('id', $id)->first();
+        return view('admin.edit-lawyer', ['lawyers' => $lawyers]);
     }
 
     public function showLaw($jenis_hukum){
@@ -63,18 +63,18 @@ class LawyerController extends Controller
 
     public function delete($id){
         Lawyer::find($id)->delete();
-        return response()->json(["Data berhasil dihapus"]);
+        return redirect()->route('admin.list-lawyer')->with('success', 'Data successfully to delete');
     }
 
     public function updateLawyer(LawyerRequest $law, $id){
         $law->validated();
         $lawyer = Lawyer::where('id', $id)->first();
-        if($law->hasFile('images')){
-            $path = 'images/lawyer'.$lawyer->picture;
+        if($law->hasFile('picture')){
+            $path = 'images/lawyer/'.$lawyer->picture;
             if(File::exists($path)){
                 File::delete($path);
             }
-            $file = $law->file('images');
+            $file = $law->file('picture');
             $ext = $file->getClientOriginalExtension();
             $image_name = time().'.'.$ext;
             $file->move('images/lawyer', $image_name);
@@ -89,6 +89,6 @@ class LawyerController extends Controller
         $lawyer->jenis_hukum = $law->jenis_hukum;
         $lawyer->deskripsi = $law->deskripsi;
         $lawyer->save();
-        return response()->json(["Data berhasil diupdate"]);
+         return redirect()->route('admin.list-lawyer')->with('success', 'Data successfully to update');
     }
 }

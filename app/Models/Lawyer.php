@@ -9,10 +9,11 @@ use App\Models\Transaksi;
 class Lawyer extends Model {
     use HasFactory;
 
-    protected $table = 'lawyer';
+    protected $table = "lawyer";
     protected $primaryKey = 'id';
     // protected $timestamp = false;
     protected $fillable = [
+        'id',
         'nama_lawyer',
         'phone',
         'place_birth',
