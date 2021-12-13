@@ -289,8 +289,8 @@
     <script src="js/jquery.scrollTo.js"></script>
     <script src="js/jquery.appear.js"></script>
     <script src="js/stellar.js"></script>
-    <script src="js/query.cubeportfolio.min.js"></script>
-    <script src="js/jquery.cubeportfolio.js"></script>
+    {{-- <script src="js/query.cubeportfolio.min.js"></script> --}}
+    <script src="js/jquery.cubeportfolio.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/nivo-lightbox.min.js"></script>
     <script src="js/custom.js"></script>

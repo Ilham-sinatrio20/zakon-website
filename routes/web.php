@@ -27,6 +27,34 @@ Route::get('lawyer/lawyer1', function () {
     return view('lawyer.lawyer1');
 });
 
+Route::get('admin/layout', function(){
+    return view('layouts.adminlayout');
+});
+
+Route::post('admin/addlawyer', [LawyerController::class, 'addLawyer'])->name('add.lawyer');
+
+Route::get('admin/transaction', function(){
+    return view('admin.transaction');
+});
+
+Route::get('admin/detail-lawyer', function(){
+    return view('admin.detail-lawyer');
+});
+
+Route::put('admin/edit-lawyer', function(){
+    return view('admin.edit-lawyer');
+});
+
+Route::delete('admin/delete-lawyer', function(){
+    return view('admin.delete-lawyer');
+});
+
+Route::get('admin/list-lawyer', [LawyerController::class, 'index']);
+
+Route::get('admin/add-lawyer', function(){
+    return view('admin.addlawyer');
+});
+
 
 Route::get('/lawyer@ekonomi',[LawyerController::class, 'showLayer']);
 

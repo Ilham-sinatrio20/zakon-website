@@ -8,9 +8,8 @@ use App\Http\Requests\LawyerRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class LawyerController extends Controller
-{
-    public function addLawyer(LawyerRequest $law){
+class LawyerFEController extends Controller {
+     public function addLawyer(LawyerRequest $law){
         $law->validated();
 
         $input = new Lawyer;
@@ -36,19 +35,8 @@ class LawyerController extends Controller
 
     public function index(){
         $count = Lawyer::count();
-        $eko_count = Lawyer::where('jenis_hukum', '=', 'Ekonomi')->count();
-        $tn_count = Lawyer::where('jenis_hukum', '=', 'Tata Negara')->count();;
-        $pidana_count = Lawyer::where('jenis_hukum', '=', 'Pidana')->count();;
-        $fam_count = Lawyer::where('jenis_hukum', '=', 'Keluarga')->count();;
         $lawyer = Lawyer::all();
-        return view('admin.listlawyer', [
-            'lawyer' => $lawyer,
-            'count' => $count,
-            'eko' => $eko_count,
-            'tn' => $tn_count,
-            'pidana' => $pidana_count,
-            'fam' => $fam_count
-        ]);
+        return view('admin.listlawyer', ['lawyer' => $lawyer, 'count' => $count]);
     }
 
     public function showByID($id){
