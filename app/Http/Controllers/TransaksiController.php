@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
 use App\Models\Lawyer;
 use App\Models\Transaksi;
@@ -9,8 +9,8 @@ use App\Http\Requests\TransaksiRequest;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\PDF;
 
-class TransaksiController extends Controller {
-
+class TransaksiController extends Controller
+{
     public function showTransaction() {
         $data = Transaksi::all();
         return response()->json(['Data' => $data]);

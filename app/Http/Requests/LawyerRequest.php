@@ -30,7 +30,7 @@ class LawyerRequest extends FormRequest {
                     'place_birth' => 'required|string',
                     'date_birth' => 'required|date',
                     'address' => 'required|string',
-                    'picture' => 'required|file',
+                    'picture' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:1024',
                     'email' => 'required|string',
                     'jenis_hukum' => 'required|string',
                     'deskripsi' => 'required|string'
@@ -43,7 +43,7 @@ class LawyerRequest extends FormRequest {
                     'place_birth' => 'sometimes|string',
                     'date_birth' => 'sometimes|date',
                     'address' => 'sometimes|string',
-                    'picture' => 'sometimes|file',
+                    'picture' => 'sometimes|image|mimes:jpg,png,jpeg,gif,svg|max:1024',
                     'email' => 'sometimes|string',
                     'jenis_hukum' => 'sometimes|string',
                     'deskripsi' => 'sometimes|string'

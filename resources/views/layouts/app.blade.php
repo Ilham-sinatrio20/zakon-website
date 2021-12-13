@@ -26,11 +26,13 @@
     <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href={{ asset('css/style.css') }}>
-    <link rel="stylesheet" href={{ asset('css/components.css') }}>
+    <link rel="stylesheet" href={{ asset('style/style.css') }}>
+    <link rel="stylesheet" href={{ asset('style/components.css') }}>
 
     <!-- -->
     <link rel="shortcut icon" href={{ asset('images/logo/zakon.ico') }}>
+
+
 </head>
 <body>
     {{-- <div id="app">
@@ -89,7 +91,7 @@
         </nav> --}}
 
         <main class="py-4">
-            @yield('content')
+            @yield('contents')
         </main>
     </div>
 </body>

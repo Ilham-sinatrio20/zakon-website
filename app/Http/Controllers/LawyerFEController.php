@@ -8,9 +8,8 @@ use App\Http\Requests\LawyerRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class LawyerController extends Controller
-{
-    public function addLawyer(LawyerRequest $law){
+class LawyerFEController extends Controller {
+     public function addLawyer(LawyerRequest $law){
         $law->validated();
 
         $input = new Lawyer;
@@ -36,24 +35,13 @@ class LawyerController extends Controller
 
     public function index(){
         $count = Lawyer::count();
-        $eko_count = Lawyer::where('jenis_hukum', '=', 'Ekonomi')->count();
-        $tn_count = Lawyer::where('jenis_hukum', '=', 'Tata Negara')->count();;
-        $pidana_count = Lawyer::where('jenis_hukum', '=', 'Pidana')->count();;
-        $fam_count = Lawyer::where('jenis_hukum', '=', 'Keluarga')->count();;
         $lawyer = Lawyer::all();
-        return view('admin.listlawyer', [
-            'lawyer' => $lawyer,
-            'count' => $count,
-            'eko' => $eko_count,
-            'tn' => $tn_count,
-            'pidana' => $pidana_count,
-            'fam' => $fam_count
-        ]);
+        return view('admin.listlawyer', ['lawyer' => $lawyer, 'count' => $count]);
     }
 
     public function showByID($id){
-        $lawyers = Lawyer::where('id', $id)->first();
-        return view('admin.edit-lawyer', ['lawyers' => $lawyers]);
+        $lawyer = Lawyer::where('id', $id)->get();
+        return response()->json(['lawyer' => $lawyer]);
     }
 
     public function showLaw($jenis_hukum){
@@ -63,18 +51,18 @@ class LawyerController extends Controller
 
     public function delete($id){
         Lawyer::find($id)->delete();
-        return redirect()->route('admin.list-lawyer')->with('success', 'Data successfully to delete');
+        return response()->json(["Data berhasil dihapus"]);
     }
 
     public function updateLawyer(LawyerRequest $law, $id){
         $law->validated();
         $lawyer = Lawyer::where('id', $id)->first();
-        if($law->hasFile('picture')){
-            $path = 'images/lawyer/'.$lawyer->picture;
+        if($law->hasFile('images')){
+            $path = 'images/lawyer'.$lawyer->picture;
             if(File::exists($path)){
                 File::delete($path);
             }
-            $file = $law->file('picture');
+            $file = $law->file('images');
             $ext = $file->getClientOriginalExtension();
             $image_name = time().'.'.$ext;
             $file->move('images/lawyer', $image_name);
@@ -89,6 +77,6 @@ class LawyerController extends Controller
         $lawyer->jenis_hukum = $law->jenis_hukum;
         $lawyer->deskripsi = $law->deskripsi;
         $lawyer->save();
-         return redirect()->route('admin.list-lawyer')->with('success', 'Data successfully to update');
+        return response()->json(["Data berhasil diupdate"]);
     }
 }
