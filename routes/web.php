@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\FeedbackController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LawyerController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,15 +35,11 @@ Route::get('admin/layout', function(){
 
 Route::post('admin/addlawyer', [LawyerController::class, 'addLawyer'])->name('add.lawyer');
 
-Route::get('admin/transaction', function(){
-    return view('admin.transaction');
-});
+Route::get('admin/transaksi/transaction', [TransaksiController::class, 'showTransaction'])->name('admin.transaction-all');
 
 Route::get('admin/{id}/edit', [LawyerController::class, 'showByID'])->name('admin.edit');
 
-Route::get('admin/{id}/detail-lawyer', function(){
-    return view('admin.detail-lawyer');
-})->name('admin.detail');
+Route::get('admin/{id}/detail-lawyer', [LawyerController::class, 'detail'])->name('admin.detail');
 
 Route::put('admin/{id}/edit-lawyer', [LawyerController::class, 'updateLawyer'])->name('admin.update');
 
@@ -53,6 +51,15 @@ Route::get('admin/add-lawyer', function(){
     return view('admin.addlawyer');
 });
 
+Route::delete('admin/transaksi/{id}/delete', [TransaksiController::class, 'deleteTiket'])->name('delete.transaksi');
+
+Route::get('admin/transaksi/{id}/detail', [TransaksiController::class, 'ticketChecking'])->name('detail.transaksi');
+
+Route::put('admin/transaksi/{id}/update', [TransaksiController::class, 'updateTicket'])->name('update.transaksi');
+
+Route::get('/admin/feedback/{id}/detail', [FeedbackController::class, 'showById'])->name('detail.feed');
+
+Route::get('/admin/feedback/', [FeedbackController::class, 'showFeedback'])->name('home.feed');
 
 Route::get('/lawyer@ekonomi',[LawyerController::class, 'showLayer']);
 

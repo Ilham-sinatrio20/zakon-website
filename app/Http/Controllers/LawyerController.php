@@ -51,9 +51,14 @@ class LawyerController extends Controller
         ]);
     }
 
+    public function detail($id){
+        $lawyer = Lawyer::where('id', $id)->first();
+        return view('admin.detail-lawyer', ['lawyer' => $lawyer]);
+    }
+
     public function showByID($id){
-        $lawyers = Lawyer::where('id', $id)->first();
-        return view('admin.edit-lawyer', ['lawyers' => $lawyers]);
+        $lawyer = Lawyer::where('id', $id)->first();
+        return view('admin.edit-lawyer', ['lawyer' => $lawyer]);
     }
 
     public function showLaw($jenis_hukum){
@@ -89,6 +94,6 @@ class LawyerController extends Controller
         $lawyer->jenis_hukum = $law->jenis_hukum;
         $lawyer->deskripsi = $law->deskripsi;
         $lawyer->save();
-         return redirect()->route('admin.list-lawyer')->with('success', 'Data successfully to update');
+        return redirect()->route('admin.list-lawyer')->with('success', 'Data successfully to update');
     }
 }

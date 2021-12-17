@@ -1,3 +1,6 @@
+@section('optional')
+    <link rel="stylesheet" href="../node_modules/prismjs/themes/prism.css">
+@endsection
 @extends('layouts.adminlayout')
 
 @section('content')
@@ -99,11 +102,12 @@
                                     </td>
                                     <td class="text-truncate">
                                         {{ $lawyers->nama_lawyer }}
-                                        <div class="table-links">
+                                        <div class="table-links d-flex justify-content-between">
                                             <form action="{{ route('admin.delete', $lawyers->id) }}" method="POST" enctype="multipart/form-data">
-                                                <a href="{{ route('admin.detail', $lawyers->id) }}">View</a>
                                                 <div class="bullet"></div>
-                                                <a href="{{ route('admin.edit', $lawyers->id) }}">Edit</a>
+                                                    <a href="{{ route('admin.detail', $lawyers->id) }}">Show Detail</a>
+                                                <div class="bullet"></div>
+                                                    <a href="{{ route('admin.edit', $lawyers->id) }}">Edit</a>
                                                 <div class="bullet"></div>
                                                 @csrf
                                                 @method('DELETE')
@@ -168,5 +172,7 @@
 
 @section('component')
     <!-- Page Specific JS File -->
+    <script src="../node_modules/prismjs/prism.js"></script>
+    <script src={{ asset('js/page/bootstrap-modal.js') }}></script>
     <script src={{ asset('js/script/page/features-posts.js') }}></script>
 @endsection
