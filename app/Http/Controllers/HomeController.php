@@ -26,6 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $userList = User::all();
         $countAdmin = User::count();
         $countLawyer = Lawyer::count();
         $countTransaction = Transaksi::count();
@@ -34,7 +35,8 @@ class HomeController extends Controller
             'countAdmin' => $countAdmin,
             'countLawyer' => $countLawyer,
             'countTransaction' => $countTransaction,
-            'countFeedback' => $countFeedback
+            'countFeedback' => $countFeedback,
+            'userList' => $userList
         ]);
         // return view('admin.dashboard');
     }

@@ -37,17 +37,25 @@ class LawyerController extends Controller
     public function index(){
         $count = Lawyer::count();
         $eko_count = Lawyer::where('jenis_hukum', '=', 'Ekonomi')->count();
-        $tn_count = Lawyer::where('jenis_hukum', '=', 'Tata Negara')->count();;
-        $pidana_count = Lawyer::where('jenis_hukum', '=', 'Pidana')->count();;
-        $fam_count = Lawyer::where('jenis_hukum', '=', 'Keluarga')->count();;
+        $tn_count = Lawyer::where('jenis_hukum', '=', 'Tata Negara')->count();
+        $pidana_count = Lawyer::where('jenis_hukum', '=', 'Pidana')->count();
+        $fam_count = Lawyer::where('jenis_hukum', '=', 'Keluarga')->count();
         $lawyer = Lawyer::all();
+        $ekonomi = Lawyer::where('jenis_hukum', '=', 'Ekonomi')->get();
+        $tatanegara = Lawyer::where('jenis_hukum', '=', 'Tata Negara')->get();
+        $crimes = Lawyer::where('jenis_hukum', '=', 'Pidana')->get();
+        $keluarga = Lawyer::where('jenis_hukum', '=', 'Keluarga')->get();
         return view('admin.listlawyer', [
             'lawyer' => $lawyer,
             'count' => $count,
             'eko' => $eko_count,
             'tn' => $tn_count,
             'pidana' => $pidana_count,
-            'fam' => $fam_count
+            'fam' => $fam_count,
+            'ekonomi' => $ekonomi,
+            'tatanegara' => $tatanegara,
+            'crimes' => $crimes,
+            'keluarga' => $keluarga
         ]);
     }
 

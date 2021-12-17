@@ -26,7 +26,7 @@ class LawyerRequest extends FormRequest {
             case 'POST': {
                 return [
                     'nama_lawyer' => 'required|string',
-                    'phone' => 'required|string|max:15',
+                    'phone' => 'required|string|max:20',
                     'place_birth' => 'required|string',
                     'date_birth' => 'required|date',
                     'address' => 'required|string',
@@ -39,7 +39,7 @@ class LawyerRequest extends FormRequest {
             case 'PUT': {
                 return [
                     'nama_lawyer' => 'sometimes|string',
-                    'phone' => 'sometimes|string|max:15',
+                    'phone' => 'sometimes|string|max:20',
                     'place_birth' => 'sometimes|string',
                     'date_birth' => 'sometimes|date',
                     'address' => 'sometimes|string',

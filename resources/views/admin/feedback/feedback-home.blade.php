@@ -25,7 +25,7 @@
                     <div class="table-responsive">
                         <table class="table table-striped" id="sortable-table">
                             <thead>
-                            <tr>
+                            <tr class="text-center align-middle">
                                 <th class="text-center">No</th>
                                 <th>Sender</th>
                                 <th>Phone</th>
@@ -37,7 +37,7 @@
                             <?php $i = 1; ?>
                             @foreach ($feedback as $fb)
                             <tr>
-                                <td>{{ $i++; }}</td>
+                                <td class="text-center align-middle">{{ $i++; }}</td>
                                 <td>{{ $fb->nama_sender }}</td>
                                 <td>{{ $fb->phone_sender }}</td>
                                 <td>{{ $fb->created_at }}</td>

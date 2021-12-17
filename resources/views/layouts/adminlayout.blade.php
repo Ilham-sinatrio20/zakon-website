@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('optional')
+    <link rel="stylesheet" href="../node_modules/prismjs/themes/prism.css">
+@endsection
 @section('contents')
     <div id="app">
         <div class="main-wrapper">
@@ -145,23 +148,27 @@
                     {{-- <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1"> --}}
                     <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div></a>
                     <div class="dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-title">Logged in 5 min ago</div>
-                    <a href="features-profile.html" class="dropdown-item has-icon">
-                        <i class="far fa-user"></i> Profile
-                    </a>
-                    <a href="features-activities.html" class="dropdown-item has-icon">
-                        <i class="fas fa-bolt"></i> Activities
-                    </a>
-                    <a href="features-settings.html" class="dropdown-item has-icon">
-                        <i class="fas fa-cog"></i> Settings
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger"
-                            onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                            {{-- {{ __('Logout') }}> --}}
-                        <i class="fas fa-sign-out-alt"></i> Logout
-                    </a>
+                        <div class="dropdown-title">Logged in 5 min ago</div>
+                        <a href="features-profile.html" class="dropdown-item has-icon">
+                            <i class="far fa-user"></i> Profile
+                        </a>
+                        <a href="features-activities.html" class="dropdown-item has-icon">
+                            <i class="fas fa-bolt"></i> Activities
+                        </a>
+                        <a href="features-settings.html" class="dropdown-item has-icon">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                        {{-- onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"> --}}
+                        {{-- {{ __('Logout') }}> --}}
+                        <div class="dropdown-divider"></div>
+                        <button type="button" class="dropdown-item has-icon text-danger" data-toggle="modal" data-target="#exampleModal" style="border: none; background: none;">
+                            Logout
+                        </button>
+
+                        {{-- <a href="#modal" class="dropdown-item has-icon text-danger" id="modal_btn">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a> --}}
                     </div>
                 </li>
                 </ul>
@@ -169,18 +176,18 @@
             <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                 <div class="sidebar-brand">
-                    <a href="/home">Stisla</a>
+                    <a href="/home">Zakon Website</a>
                 </div>
                 <div class="sidebar-brand sidebar-brand-sm">
-                    <a hhref="/home">St</a>
+                    <a href="/home"><img src="{{ asset('images/logo/zakon.png') }}" style="width: 45px;" alt="Logo"></a>
                 </div>
                 <ul class="sidebar-menu">
                     <li class="menu-header">Lawyer</li>
                     <li class="nav-item dropdown active">
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-user-circle"></i><span>Lawyer Config</span></a>
-                        <ul class="dropdown-menu">
-                        <li class="active"><a class="nav-link" href="/admin/list-lawyer">List Lawyer</a></li>
-                        <li class="active"><a class="nav-link" href="/admin/add-lawyer">Add Lawyer</a></li>
+                            <ul class="dropdown-menu">
+                            <li class="active"><a class="nav-link" href="/admin/list-lawyer">List Lawyer</a></li>
+                            <li class="active"><a class="nav-link" href="/admin/add-lawyer">Add Lawyer</a></li>
                         {{-- <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li> --}}
                         </ul>
                     </li>
@@ -188,73 +195,34 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-comments"></i> <span>User Feedback</span></a>
                         <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="/admin/feedback">List Feedback</a></li>
-                        <li><a class="nav-link" href="/admin/feedback">Feedback Detail</a></li>
-                        <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
+                            <li><a class="nav-link" href="/admin/feedback">List Feedback</a></li>
+                            {{-- <li><a class="nav-link" href="/admin/feedback">Feedback Detail</a></li>
+                            <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li> --}}
                         </ul>
                     </li>
                     <li class="menu-header">Transaction</li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Transaction Config</span></a>
                         <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="/admin/transaksi/transaction">Transaction Detail</a></li>
-                        {{-- <li><a class="nav-link beep beep-sidebar" href="components-avatar.html">Avatar</a></li>
-                        <li><a class="nav-link" href="components-chat-box.html">Chat Box</a></li>
-                        <li><a class="nav-link beep beep-sidebar" href="components-empty-state.html">Empty State</a></li>
-                        <li><a class="nav-link" href="components-gallery.html">Gallery</a></li>
-                        <li><a class="nav-link beep beep-sidebar" href="components-hero.html">Hero</a></li>
-                        <li><a class="nav-link" href="components-multiple-upload.html">Multiple Upload</a></li>
-                        <li><a class="nav-link beep beep-sidebar" href="components-pricing.html">Pricing</a></li>
-                        <li><a class="nav-link" href="components-statistic.html">Statistic</a></li>
-                        <li><a class="nav-link" href="components-tab.html">Tab</a></li>
-                        <li><a class="nav-link" href="components-table.html">Table</a></li>
-                        <li><a class="nav-link" href="components-user.html">User</a></li>
-                        <li><a class="nav-link beep beep-sidebar" href="components-wizard.html">Wizard</a></li> --}}
+                            <li><a class="nav-link" href="/admin/transaksi/transaction">Transaction Detail</a></li>
                         </ul>
                     </li>
-                    <li class="menu-header">Pages</li>
+                    <li class="menu-header">Settings</li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
+                        <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Admin Settings</span></a>
                         <ul class="dropdown-menu">
-                        <li><a href="auth-forgot-password.html">Forgot Password</a></li>
-                        <li><a href="auth-login.html">Login</a></li>
-                        <li><a class="beep beep-sidebar" href="auth-login-2.html">Login 2</a></li>
-                        <li><a href="auth-register.html">Register</a></li>
-                        <li><a href="auth-reset-password.html">Reset Password</a></li>
+                            <li><a href="auth-login.html">Admin Profile</a></li>
+                            <li><a href="{{ route('password.update') }}">Forgot Password</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                            {{-- <li><a href="{{ route('') }}">Reset Password</a></li> --}}
+                            <li>
+                                <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Logout</a>
+                            </li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-exclamation"></i> <span>Errors</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="errors-503.html">503</a></li>
-                        <li><a class="nav-link" href="errors-403.html">403</a></li>
-                        <li><a class="nav-link" href="errors-404.html">404</a></li>
-                        <li><a class="nav-link" href="errors-500.html">500</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-bicycle"></i> <span>Features</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="features-activities.html">Activities</a></li>
-                        <li><a class="nav-link" href="features-post-create.html">Post Create</a></li>
-                        <li><a class="nav-link" href="features-posts.html">Posts</a></li>
-                        <li><a class="nav-link" href="features-profile.html">Profile</a></li>
-                        <li><a class="nav-link" href="features-settings.html">Settings</a></li>
-                        <li><a class="nav-link" href="features-setting-detail.html">Setting Detail</a></li>
-                        <li><a class="nav-link" href="features-tickets.html">Tickets</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-ellipsis-h"></i> <span>Utilities</span></a>
-                        <ul class="dropdown-menu">
-                        <li><a href="utilities-contact.html">Contact</a></li>
-                        <li><a class="nav-link" href="utilities-invoice.html">Invoice</a></li>
-                        <li><a href="utilities-subscribe.html">Subscribe</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
-                    </ul>
-
+                </ul>
                     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                     <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
                         <i class="fas fa-rocket"></i> Documentation
@@ -269,8 +237,42 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" data-backdrop="false" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index:999999;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure to logout?
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="modalExit" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-primary">Logout</a>
+            </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('spesifik')
-     @yield('component')
+    @yield('component')
+    <script src="../node_modules/prismjs/prism.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/page/bootstrap-modal.js') }}"></script>
+    <script>
+            $(document).ready(function(){
+                $('.close, .btn-danger').click(function() {
+                    $( "#exampleModal" ).hide();
+                });
+            });
+
+            function logout(){
+                window.location.href = "{{ route('logout') }}";
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+            }
+    </script>
 @endsection
