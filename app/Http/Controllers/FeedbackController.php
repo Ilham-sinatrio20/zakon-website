@@ -10,12 +10,12 @@ use Illuminate\Http\Request;
 class FeedbackController extends Controller {
     public function showFeedback(){
         $feedback = Feedback::all();
-        return response()->json(['feedback' => $feedback]);
+        return view('admin.feedback.feedback-home', ['feedback' => $feedback]);
     }
 
     public function showById($id){
-        $feedback = Feedback::where('id', $id)->get();
-        return response()->json(['feedback' => $feedback]);
+        $feedback = Feedback::where('id', $id)->first();
+        return view('admin.feedback.feedback-detail', ['fb' => $feedback]);
     }
 
     public function sendFeedback(FeedbackRequest $request){

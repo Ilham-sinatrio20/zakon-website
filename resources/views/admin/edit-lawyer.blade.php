@@ -7,8 +7,8 @@
             </div>
             <h1>Edit Lawyer</h1>
             <div class="section-header-breadcrumb">
-              <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-              <div class="breadcrumb-item"><a href="#">Lawyer</a></div>
+              <div class="breadcrumb-item active"><a href="{{ route('home') }}">Dashboard</a></div>
+              <div class="breadcrumb-item"><a href="{{ route('admin.list-lawyer') }}">Lawyer</a></div>
               <div class="breadcrumb-item">Edit Lawyer</div>
             </div>
           </div>
@@ -36,43 +36,43 @@
                                 </ul>
                             </div>
                             @endif
-                            <form action="{{ route('admin.update') }}" method="POST" id="myForm" enctype="multipart/form-data">
+                            <form action="{{ route('admin.update', $lawyer->id) }}" method="POST" id="myForm" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" value="{{ $lawyers->nama_lawyer }}" name="nama_lawyer" id="nama_lawyer" required>
+                                        <input type="text" class="form-control" value="{{ $lawyer->nama_lawyer }}" name="nama_lawyer" id="nama_lawyer">
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tempat Lahir</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="text" class="form-control" value="{{ $lawyers->place_birth }}" name="place_birth" id="place_birth" required>
+                                        <input type="text" class="form-control" value="{{ $lawyer->place_birth }}" name="place_birth" id="place_birth">
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal Lahir</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="date" class="form-control" name="date_birth" value="{{ $lawyers->date_birth }}" id="date_birth" required>
+                                        <input type="date" class="form-control" name="date_birth" value="{{ $lawyer->date_birth }}" id="date_birth">
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Email</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="email" class="form-control" name="email" value="{{ $lawyers->email }}" id="email" required>
+                                        <input type="email" class="form-control" name="email" value="{{ $lawyer->email }}" id="email">
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nomor HP</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <input type="tel" class="form-control" name="phone" value="{{ $lawyers->phone }}" id="phone" required>
+                                        <input type="tel" class="form-control" name="phone" value="{{ $lawyer->phone }}" id="phone">
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jenis Hukum</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <select class="form-control selectric" value="{{ $lawyers->jenis_hukum }}" name="jenis_hukum" id="jenis_hukum" required>
+                                    <select class="form-control selectric" value="{{ $lawyer->jenis_hukum }}" name="jenis_hukum" id="jenis_hukum">
                                     <option>Ekonomi</option>
                                     <option>Keluarga</option>
                                     <option>Pidana</option>
@@ -83,7 +83,7 @@
                                 <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Address</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <textarea class="summernote-simple form-control" values="{{ $lawyers->address }}" name="address" id="address" style="height: 100px"></textarea>
+                                    <textarea class="summernote-simple form-control" name="address" id="address" style="height: 100px">{{ $lawyer->address }}</textarea>
                                 </div>
                                 </div>
                                 <div class="form-group row mb-4">
@@ -91,14 +91,15 @@
                                     <div class="col-sm-12 col-md-7">
                                         <div id="image-preview" class="image-preview">
                                             <label for="image-upload" id="image-label">Choose File</label>
-                                            <input type="file" name="picture" id="picture" required>
+                                            <input type="file" name="picture" id="picture" value={{ $lawyer->picture }}>
+                                            <img src="{{ asset('images/lawyer/'.$lawyer->picture) }}" alt="images" width="250px">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <textarea class="summernote-simple form-control" values="{{ $lawyers->deskripsi }}" name="deskripsi" id="deskripsi" style="height: 100px"></textarea>
+                                        <textarea class="summernote-simple form-control" name="deskripsi" id="deskripsi" style="height: 100px">{{ $lawyer->deskripsi }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
@@ -112,20 +113,20 @@
                     </div>
                 </div>
             </div>
-          </div>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        </div>
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-<script type="text/javascript">
-$(document).ready(function (e) {
-    $('#image').change(function(){
-        let reader = new FileReader();
-        reader.onload = (e) => {
-            $('#image-preview').attr('src', e.target.result);
-        }
-            reader.readAsDataURL(this.files[0]);
-    });
-});
-</script>
+            <script type="text/javascript">
+            $(document).ready(function (e) {
+                $('#image').change(function(){
+                    let reader = new FileReader();
+                    reader.onload = (e) => {
+                        $('#image-preview').attr('src', e.target.result);
+                    }
+                        reader.readAsDataURL(this.files[0]);
+                });
+            });
+            </script>
 @endsection
 
 @section('component')

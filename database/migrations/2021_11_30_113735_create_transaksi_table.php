@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransaksiTable extends Migration
-{
+class CreateTransaksiTable extends Migration {
     /**
      * Run the migrations.
      *
@@ -17,6 +16,7 @@ class CreateTransaksiTable extends Migration
             $table->unsignedBigInteger('lawyer_id')->nullable();
             $table->string('nama_klien', 100);
             $table->string('email_klien', 50);
+            $table->string('phone', 20);
             $table->date('tgl_meet');
             $table->string('status', 35);
             $table->longText('keterangan');

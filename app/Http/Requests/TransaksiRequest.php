@@ -4,9 +4,9 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
-class TransaksiRequest extends FormRequest
-{
+class TransaksiRequest extends FormRequest {
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -26,18 +26,18 @@ class TransaksiRequest extends FormRequest
         switch($this->method()){
             case 'POST': {
                 return [
-                    'lawyer_id' => 'required|integer',
                     'nama_klien' => 'required|string',
-                    'phone' => 'required|string|max:15',
+                    'nama_lawyer' => 'required|string',
+                    'phone' => 'required|string|max:20',
                     'tgl_meet' => 'date|required',
                     'keterangan' => 'required|string'
                 ];
             } break;
             case 'PUT': {
                 return [
-                    'lawyer_id' => 'sometimes|integer',
                     'nama_klien' => 'sometimes|string',
-                    'phone' => 'sometimes|string|max:15',
+                    'nama_lawyer' => 'sometimes|string',
+                    'phone' => 'sometimes|string|max:20',
                     'tgl_meet' => 'date|sometimes',
                     'keterangan' => 'sometimes|string'
                 ];

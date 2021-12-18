@@ -17,6 +17,7 @@ class TransaksiFactory extends Factory {
             'lawyer_id' => rand(1, Lawyer::count()),
             'nama_klien' => $this->faker->name,
             'email_klien' => $this->faker->email,
+            'phone' => $this->faker->phoneNumber,
             'tgl_meet' => $this->faker->dateTimeBetween('-5 years', 'now'),
             'status' => $this->faker->word,
             'keterangan' => $this->faker->sentences(4, true)

@@ -37,23 +37,36 @@ class LawyerController extends Controller
     public function index(){
         $count = Lawyer::count();
         $eko_count = Lawyer::where('jenis_hukum', '=', 'Ekonomi')->count();
-        $tn_count = Lawyer::where('jenis_hukum', '=', 'Tata Negara')->count();;
-        $pidana_count = Lawyer::where('jenis_hukum', '=', 'Pidana')->count();;
-        $fam_count = Lawyer::where('jenis_hukum', '=', 'Keluarga')->count();;
+        $tn_count = Lawyer::where('jenis_hukum', '=', 'Tata Negara')->count();
+        $pidana_count = Lawyer::where('jenis_hukum', '=', 'Pidana')->count();
+        $fam_count = Lawyer::where('jenis_hukum', '=', 'Keluarga')->count();
         $lawyer = Lawyer::all();
+        $ekonomi = Lawyer::where('jenis_hukum', '=', 'Ekonomi')->get();
+        $tatanegara = Lawyer::where('jenis_hukum', '=', 'Tata Negara')->get();
+        $crimes = Lawyer::where('jenis_hukum', '=', 'Pidana')->get();
+        $keluarga = Lawyer::where('jenis_hukum', '=', 'Keluarga')->get();
         return view('admin.listlawyer', [
             'lawyer' => $lawyer,
             'count' => $count,
             'eko' => $eko_count,
             'tn' => $tn_count,
             'pidana' => $pidana_count,
-            'fam' => $fam_count
+            'fam' => $fam_count,
+            'ekonomi' => $ekonomi,
+            'tatanegara' => $tatanegara,
+            'crimes' => $crimes,
+            'keluarga' => $keluarga
         ]);
     }
 
+    public function detail($id){
+        $lawyer = Lawyer::where('id', $id)->first();
+        return view('admin.detail-lawyer', ['lawyer' => $lawyer]);
+    }
+
     public function showByID($id){
-        $lawyers = Lawyer::where('id', $id)->first();
-        return view('admin.edit-lawyer', ['lawyers' => $lawyers]);
+        $lawyer = Lawyer::where('id', $id)->first();
+        return view('admin.edit-lawyer', ['lawyer' => $lawyer]);
     }
 
     public function showLaw($jenis_hukum){
@@ -89,6 +102,6 @@ class LawyerController extends Controller
         $lawyer->jenis_hukum = $law->jenis_hukum;
         $lawyer->deskripsi = $law->deskripsi;
         $lawyer->save();
-         return redirect()->route('admin.list-lawyer')->with('success', 'Data successfully to update');
+        return redirect()->route('admin.list-lawyer')->with('success', 'Data successfully to update');
     }
 }
