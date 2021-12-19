@@ -21,8 +21,11 @@ class CreateLawyerTable extends Migration {
             $table->string('address', 255);
             $table->string('picture', 255);
             $table->string('email', 50)->unique();
+            $table->string('negara', 50);
+            $table->string('last_edu', 150);
+            $table->string('website', 100);
             $table->string('jenis_hukum', 100);
-            $table->longText('deskripsi')->nullable();
+            $table->longText('pengalaman')->nullable();
             $table->timestamps();
         });
     }

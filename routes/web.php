@@ -3,11 +3,8 @@
 use App\Http\Controllers\FeedbackController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LawyerController;
-<<<<<<< HEAD
 use App\Http\Controllers\TransaksiController;
-=======
 use App\Http\Controllers\LawyerFEController;
->>>>>>> aaa745e3d76522bc57f4c347e02c4981b891b0bf
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {

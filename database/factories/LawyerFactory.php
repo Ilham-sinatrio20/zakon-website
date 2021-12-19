@@ -15,6 +15,7 @@ class LawyerFactory extends Factory
     protected $model = Lawyer::class;
 
     public function definition() {
+        $edu = 'S2 Hukum Universitas ';
         return [
             'nama_lawyer' => $this->faker->name(),
             'phone' => $this->faker->phoneNumber(),
@@ -23,8 +24,11 @@ class LawyerFactory extends Factory
             'address' => $this->faker->address(),
             'picture' => $this->faker->image('public/images', 400, 300),
             'email' => $this->faker->email(),
+            'negara' => $this->faker->country(),
+            'last_edu' => 'S2 Hukum Universitas '.$this->faker->company(),
+            'website' => $this->faker->url(),
             'jenis_hukum' => $this->faker->word(),
-            'deskripsi' => $this->faker->sentences(2, true),
+            'pengalaman' => $this->faker->sentences(2, true),
         ];
     }
 }
