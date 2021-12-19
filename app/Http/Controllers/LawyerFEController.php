@@ -36,7 +36,7 @@ class LawyerFEController extends Controller {
     public function index(){
         $count = Lawyer::count();
         $lawyer = Lawyer::all();
-        return view('admin.listlawyer', ['lawyer' => $lawyer, 'count' => $count]);
+        return view('lawyer', ['lawyer' => $lawyer, 'count' => $count]);
     }
 
     public function showByID($id){
@@ -78,5 +78,10 @@ class LawyerFEController extends Controller {
         $lawyer->deskripsi = $law->deskripsi;
         $lawyer->save();
         return response()->json(["Data berhasil diupdate"]);
+    }
+
+    public function detail($id){
+        $lawyer = Lawyer::where('id', $id)->first();
+        return view('detailLawyer', ['lawyer' => $lawyer]);
     }
 }

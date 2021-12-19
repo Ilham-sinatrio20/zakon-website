@@ -38,13 +38,14 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto">
                             <img src="img/zakon-ico.ico" alt="Carousel Image" id="zakon-ico" width="50px" height="50px">
-                            <a href="index.html" class="nav-item nav-link active">BERANDA</a>
-                            <a href="about.html" class="nav-item nav-link">KONTAK</a>
-                            <a href="service.html" class="nav-item nav-link">TENTANG</a>
-
+                            <a href="index" class="nav-item nav-link">BERANDA</a>
+                            <a href="#about" class="nav-item nav-link">TENTANG</a>
+                            <a href="#kontak" class="nav-item nav-link">KONTAK</a>
+                            <!-- <a class="btn" href="#perjanjian">BUAT PERJANJIAN</a> -->
                         </div>
                         <div class="ml-auto">
-                            <a class="btn" href="">BUAT PERJANJIAN</a>
+                            <a class="btn" href="#janji">BUAT PERJANJIAN</a>
+                            
                         </div>
                     </div>
                 </nav>
@@ -68,7 +69,7 @@
                         <p class="animated fadeInRight">Percayakan kasus Anda dengan kami, pasti teratasi!</p>
                         <br><br>
 
-                        <form action="" method="get" class="cari-form">
+                        <form action="lawyer" method="get" class="cari-form">
                             <select class="form-control" id="jenis-hukum">
                                 <option value="">Pilih jenis hukum</option>
                                 <option value="ekonomi">Ekonomi</option>
@@ -222,85 +223,87 @@
         <!-- Testimonial End -->
 
         <!-- FAQs Start -->
-        <div class="faqs">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="faqs-img">
-                            <img src="img/faqs.jpg" alt="Image">
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="section-header">
-                            <h2>TENTANG KAMI</h2>
-                        </div>
-                        <div id="accordion">
-                            <div class="card">
-                                <div class="card-header">
-                                    <a class="card-link collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="true">
-                                        <span>1</span> Apa bukti berdirinya lembaga Kami?
-                                    </a>
-                                </div>
-                                <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                                    <div class="card-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <a class="card-link" data-toggle="collapse" href="#collapseTwo">
-                                        <span>2</span> Bagaimana alur mencari pengacara?
-                                    </a>
-                                </div>
-                                <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                                    <div class="card-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <a class="card-link" data-toggle="collapse" href="#collapseThree">
-                                        <span>3</span> Berapa rata-rata biaya pengacaranya?
-                                    </a>
-                                </div>
-                                <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                    <div class="card-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <a class="card-link" data-toggle="collapse" href="#collapseFour">
-                                        <span>4</span> Lorem ipsum dolor sit amet?
-                                    </a>
-                                </div>
-                                <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                    <div class="card-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <a class="card-link" data-toggle="collapse" href="#collapseFive">
-                                        <span>5</span> Lorem ipsum dolor sit amet?
-                                    </a>
-                                </div>
-                                <div id="collapseFive" class="collapse" data-parent="#accordion">
-                                    <div class="card-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                    </div>
-                                </div>
+        <section id="about">
+            <div class="faqs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="faqs-img">
+                                <img src="img/faqs.jpg" alt="Image">
                             </div>
                         </div>
-                        <a class="btn" href="">Ask more</a>
+                        <div class="col-md-7">
+                            <div class="section-header">
+                                <h2>TENTANG KAMI</h2>
+                            </div>
+                            <div id="accordion">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="true">
+                                            <span>1</span> Apa bukti berdirinya lembaga Kami?
+                                        </a>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseTwo">
+                                            <span>2</span> Bagaimana alur mencari pengacara?
+                                        </a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseThree">
+                                            <span>3</span> Berapa rata-rata biaya pengacaranya?
+                                        </a>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseFour">
+                                            <span>4</span> Lorem ipsum dolor sit amet?
+                                        </a>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseFive">
+                                            <span>5</span> Lorem ipsum dolor sit amet?
+                                        </a>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="btn" href="">Ask more</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- FAQs End -->
 
         <!-- Testimonial Start -->
@@ -435,7 +438,7 @@
         <!-- Testimonial End -->
 
         <!-- contact -->
-        <div id="contact" class="contact">
+        <div id="kontak" class="contact">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -469,6 +472,7 @@
                                             <button class="send">Kirim</button>
                                         </div>
                                     </div>
+                                <!-- </div> -->
                             </form>
                         </div>
                     </div>
@@ -479,177 +483,136 @@
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
-    </div>
-    </div>
-    <!-- end contact -->
+        <!-- end contact -->
 
 
-    <!-- contact -->
-    <div id="contact" class="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="titlepage">
-                        <h2>BUAT PERJANJIAN</h2>
-                    </div>
-                </div>
-
-            </div>
-            <div class="white_color">
+        <!-- contact -->
+        <section id="janji" class="contact">
+            <div class="container">
                 <div class="row">
+                    <div class="col-md-12">
+                        <div class="titlepage">
+                            <h2>BUAT PERJANJIAN</h2>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="white_color">
+                    <div class="row">
+
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <form class="contact_bg">
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <div class="col-md-12">
+                                            <input class="contactus" placeholder="Nama lengkap" type="text" name="nama_lengkap">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input class="contactus" placeholder="Email" type="text" name="Email">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input class="contactus" placeholder="Nomor telepon" type="text" name="nomor_telepon">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <select class="contactus" id="jenis-hukum">
+                                                <option value="">Pilih jenis hukum</option>
+                                                <option value="ekonomi">Ekonomi</option>
+                                                <option value="keluarga">Keluarga</option>
+                                                <option value="pidana">Pidana</option>
+                                                <option value="tataNegara">Tata Negara</option>
+                                            </select>
+                                        </div>
+                                        <!-- <div class="col-md-12">
+                                        <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                                         </div> -->
+                                    </div>
+                                
+                            </form>
+                        </div>
+                    </div>
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                         <form class="contact_bg">
                             <div class="row">
                                 <div class="col-md-12">
-
                                     <div class="col-md-12">
-                                        <input class="contactus" placeholder="Nama lengkap" type="text" name="nama_lengkap">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input class="contactus" placeholder="Email" type="text" name="Email">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input class="contactus" placeholder="Nomor telepon" type="text" name="nomor_telepon">
+                                        <input class="contactus" placeholder="Pilih tanggal" type="datetime-local" name="tanggal">
                                     </div>
                                     <div class="col-md-12">
                                         <select class="contactus" id="jenis-hukum">
-                                            <option value="">Pilih jenis hukum</option>
-                                            <option value="ekonomi">Ekonomi</option>
-                                            <option value="keluarga">Keluarga</option>
-                                            <option value="pidana">Pidana</option>
-                                            <option value="tataNegara">Tata Negara</option>
+                                            <option value="">Pilih pengacara</option>
+                                            <option value="Hotman Saris">Hotman Saris</option>
+                                            <option value="Adnan Boyang">Adnan Boyang</option>
+                                            <option value="Elsa Carif">Elsa Carif</option>
                                         </select>
                                     </div>
-                                    <!-- <div class="col-md-12">
-                                        <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
-                                    </div> -->
+                                    <div class="col-md-12">
+                                        <select class="contactus" id="jenis-hukum">
+                                            <option value="">Pilih pertemuan</option>
+                                            <option value="online">Online</option>
+                                            <option value="offline">Offline</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <input type="checkbox" id="setuju" name="setuju" value="setuju">
+                                        <label for="setuju">Menyetujui ketentuan online & offline</label><br>
+                                    </div>
+                                    <br><br>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <button class="send">Cari</button>
+                                        <input class="cek-tiket" placeholder="Cek tiket" name="cek_tiket">
+                                    </div>
+                                    <br><br><br><br>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                         <button class="send">Kirim</button>
                                     </div>
                                 </div>
-
-
+                            </div>
                         </form>
                     </div>
                 </div>
 
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                    <form class="contact_bg">
+            </div>
+        </section>
+
+        <!-- end contact -->
+
+
+        <!-- Newsletter Start -->
+        <div class="newsletter">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Ikuti Website Kami dan <br>Dapatkan info Terbaru</h2>
+                </div>
+                <div class="form">
+                    <input class="form-control" placeholder="Email here">
+                    <button class="btn">Submit</button>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter End -->
+
+
+
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="footer-about">
+                            <h2>About Us</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu lectus a leo tristique dictum nec non quam. Suspendisse convallis, tortor eu placerat rhoncus, lorem quam iaculis felis, sed eleifend lacus neque id eros. Integer convallis volutpat neque
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-8">
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="col-md-12">
-                                    <input class="contactus" placeholder="Pilih tanggal" type="datetime-local" name="tanggal">
-                                </div>
-                                <div class="col-md-12">
-                                    <select class="contactus" id="jenis-hukum">
-                                        <option value="">Pilih pengacara</option>
-                                        <option value="Hotman Saris">Hotman Saris</option>
-                                        <option value="Adnan Boyang">Adnan Boyang</option>
-                                        <option value="Elsa Carif">Elsa Carif</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <select class="contactus" id="jenis-hukum">
-                                        <option value="">Pilih pertemuan</option>
-                                        <option value="online">Online</option>
-                                        <option value="offline">Offline</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <input type="checkbox" id="setuju" name="setuju" value="setuju">
-                                    <label for="setuju">Menyetujui ketentuan online & offline</label><br>
-                                </div>
-                                <br><br>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                    <button class="send">Cari</button>
-                                    <input class="cek-tiket" placeholder="Cek tiket" name="cek_tiket">
-
-
-                                </div>
-                            </div>
-                            <!-- 
-                            <form action="" method="get" class="cari-form">
-                            <select class="form-control" id="jenis-hukum">
-                                <option value="">Pilih jenis hukum</option>
-                                <option value="ekonomi">Ekonomi</option>
-                                <option value="keluarga">Keluarga</option>
-                                <option value="pidana">Pidana</option>
-                                <option value="tataNegara">Tata Negara</option>
-                            </select>
-                            <button type="submit" class="form-control">Cari</button>
-                        </form> -->
-
-                    </form>
-                </div>
-            </div>
-            <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"> -->
-            <!-- <div id="map"> -->
-            <!-- <div class="col-xl-6 col-md-12">
-
-                    <div class="col-xl-6 col-md-12">
-                        <input class="contactus" placeholder="Your Name" type="text" name="Your Name">
-                    </div>
-                    <div class="col-md-12">
-                        <input class="contactus" placeholder="Email" type="text" name="Email">
-                    </div>
-                    <div class="col-md-12">
-                        <input class="contactus" placeholder="Phone Number" type="text" name="Phone Number">
-                    </div>
-                    <div class="col-md-12">
-                        <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
-                    </div>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                        <button class="send">Send</button>
-                    </div>
-                </div> -->
-            <!-- </div> -->
-            <!-- </div> -->
-        </div>
-    </div>
-
-    </div>
-    </div>
-    </div>
-    </div>
-    <!-- end contact -->
-
-
-    <!-- Newsletter Start -->
-    <div class="newsletter">
-        <div class="container">
-            <div class="section-header">
-                <h2>Ikuti Website Kami dan <br>Dapatkan info Terbaru</h2>
-            </div>
-            <div class="form">
-                <input class="form-control" placeholder="Email here">
-                <button class="btn">Submit</button>
-            </div>
-        </div>
-    </div>
-    <!-- Newsletter End -->
-
-
-
-
-    <!-- Footer Start -->
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="footer-about">
-                        <h2>About Us</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu lectus a leo tristique dictum nec non quam. Suspendisse convallis, tortor eu placerat rhoncus, lorem quam iaculis felis, sed eleifend lacus neque id eros. Integer convallis volutpat neque
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-8">
-                    <div class="row">
-                        <!-- <div class="col-md-6 col-lg-4">
+                            <!-- <div class="col-md-6 col-lg-4">
                             <div class="footer-link">
                                 <h2>Services Areas</h2>
                                 <a href="">Civil Law</a>
@@ -659,57 +622,57 @@
                                 <a href="">Immigration Law</a>
                             </div>
                         </div> -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="footer-link">
-                                <h2>Menu</h2>
-                                <a href="">Beranda</a>
-                                <a href="">Tentang</a>
-                                <a href="">Kontak</a>
-                                <a href="">Buat Perjanjian</a>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="footer-link">
+                                    <h2>Menu</h2>
+                                    <a href="">Beranda</a>
+                                    <a href="">Tentang</a>
+                                    <a href="">Kontak</a>
+                                    <a href="">Buat Perjanjian</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="footer-contact">
-                                <h2>Get In Touch</h2>
-                                <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
-                                <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
-                                <p><i class="fa fa-envelope"></i>info@example.com</p>
-                                <div class="footer-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-youtube"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="footer-contact">
+                                    <h2>Get In Touch</h2>
+                                    <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
+                                    <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
+                                    <p><i class="fa fa-envelope"></i>info@example.com</p>
+                                    <div class="footer-social">
+                                        <a href=""><i class="fab fa-twitter"></i></a>
+                                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a href=""><i class="fab fa-youtube"></i></a>
+                                        <a href=""><i class="fab fa-instagram"></i></a>
+                                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container footer-menu">
-            <div class="f-menu">
-                <a href=""><i class="fab fa-twitter"></i></a>
-                <a href=""><i class="fab fa-facebook-f"></i></a>
-                <a href=""><i class="fab fa-youtube"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
-                <a href=""><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-        <div class="container copyright">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; <a href="">LawCorporate</a>, All Right Reserved.</p>
-                </div>
-                <div class="col-md-6">
-                    <p>Designed By <a href="">RizqiIlham</a></p>
+            <div class="container footer-menu">
+                <div class="f-menu">
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-youtube"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
+            <div class="container copyright">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; <a href="">LawCorporate</a>, All Right Reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Designed By <a href="">RizqiIlham</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <!-- Footer End -->
+        <!-- Footer End -->
 
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->

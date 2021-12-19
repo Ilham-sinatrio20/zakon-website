@@ -38,15 +38,12 @@
 
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto">
-                            <img src="img/zakon-ico.ico" alt="Carousel Image" id="zakon-ico" width="50px" height="50px">
-                            <a href="index.html" class="nav-item nav-link active">BERANDA</a>
-                            <a href="about.html" class="nav-item nav-link">KONTAK</a>
-                            <a href="service.html" class="nav-item nav-link">TENTANG</a>
+                            <!-- <img src="img/zakon-ico.ico" alt="Carousel Image" id="zakon-ico" width="50px" height="50px"> -->
+                            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                                <a class="btn_back" href="/index">BACK</a>
+                            </div>
+                        </div>
 
-                        </div>
-                        <div class="ml-auto">
-                            <a class="btn" href="https://htmlcodex.com/law-firm-website-template">BUAT PERJANJIAN</a>
-                        </div>
                     </div>
                 </nav>
             </div>
@@ -85,8 +82,11 @@
 
 
                         <div id="grid-container" class="cbp-l-grid-team">
+                       
+                        
                             <ul>
-                                <li class="cbp-item ekonomi">
+                            @foreach ($lawyer as $lawyers)
+                                <!-- <li class="cbp-item ekonomi">
                                     <a href="lawyer/lawyer1" class="cbp-caption cbp-singlePage">
                                         <div class="cbp-caption-defaultWrap">
                                             <img src="img/lawyer/lawyer1.png" alt="" width="100%">
@@ -99,12 +99,12 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="lawyer/lawyer1" class="cbp-singlePage cbp-l-grid-team-name">Hotman Saris</a>
+                                    <a href="lawyer/lawyer1" class="cbp-singlePage cbp-l-grid-team-name">{{ $lawyers->nama_lawyer }}</a>
                                     <div class="cbp-l-grid-team-position">Ekonomi</div>
                                 </li>
-
+                                 -->
                                 <li class="cbp-item pidana">
-                                    <a href="doctors/member2" class="cbp-caption cbp-singlePage">
+                                    <a href="{{ route('detailLawyer', $lawyers->id) }}" class="cbp-caption">
                                         <div class="cbp-caption-defaultWrap">
                                             <img src="img/lawyer/lawyer2.png" alt="" width="100%">
                                         </div>
@@ -116,10 +116,43 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="doctors/member2" class="cbp-singlePage cbp-l-grid-team-name">Elza Carif</a>
+                                    <a href="{{ route('detailLawyer', $lawyers->id) }}" class="cbp-l-grid-team-name">{{ $lawyers->nama_lawyer }}</a>
                                     <div class="cbp-l-grid-team-position">Pidana</div>
                                 </li>
-                                <li class="cbp-item pidana">
+                                <!-- <li class="cbp-item pidana">
+                                    <a href="lawyer/lawyer2" class="cbp-caption cbp-singlePage">
+                                        <div class="cbp-caption-defaultWrap">
+                                            <img src="img/lawyer/lawyer2.png" alt="" width="100%">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignCenter">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-text">VIEW PROFILE</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="lawyer/lawyer2" class="cbp-singlePage cbp-l-grid-team-name">{{ $lawyers->nama_lawyer }}</a>
+                                    <div class="cbp-l-grid-team-position">Pidana</div>
+                                </li> -->
+                                <!-- <li class="cbp-item pidana">
+                                    <a href="doctors/member3.html" class="cbp-caption cbp-singlePage">
+                                        <div class="cbp-caption-defaultWrap">
+                                            <img src="img/lawyer/lawyer4.png" alt="" width="100%">
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignCenter">
+                                                <div class="cbp-l-caption-body">
+                                                    <div class="cbp-l-caption-text">VIEW PROFILE</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="doctors/member3" class="cbp-singlePage cbp-l-grid-team-name">Adnan Boyang</a>
+                                    <div class="cbp-l-grid-team-position">Pidana</div>
+                                </li> -->
+                                
+                                <!-- <li class="cbp-item pidana">
                                     <a href="doctors/member3.html" class="cbp-caption cbp-singlePage">
                                         <div class="cbp-caption-defaultWrap">
                                             <img src="img/lawyer/lawyer4.png" alt="" width="100%">
@@ -150,27 +183,10 @@
                                     </a>
                                     <a href="doctors/member3" class="cbp-singlePage cbp-l-grid-team-name">Adnan Boyang</a>
                                     <div class="cbp-l-grid-team-position">Pidana</div>
-                                </li>
-                                <li class="cbp-item pidana">
-                                    <a href="doctors/member3.html" class="cbp-caption cbp-singlePage">
-                                        <div class="cbp-caption-defaultWrap">
-                                            <img src="img/lawyer/lawyer4.png" alt="" width="100%">
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <div class="cbp-l-caption-text">VIEW PROFILE</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="doctors/member3" class="cbp-singlePage cbp-l-grid-team-name">Adnan Boyang</a>
-                                    <div class="cbp-l-grid-team-position">Pidana</div>
-                                </li>
-
-                                </li>
-
+                                </li> -->
+                                @endforeach
                             </ul>
+                            
                         </div>
 
                     </div>
@@ -185,7 +201,7 @@
     <div class="newsletter">
         <div class="container">
             <div class="section-header">
-                <h2>Subscribe Our Newsletter</h2>
+                <h2>Ikuti Website Kami dan <br>Dapatkan info Terbaru</h2>
             </div>
             <div class="form">
                 <input class="form-control" placeholder="Email here">
@@ -194,6 +210,9 @@
         </div>
     </div>
     <!-- Newsletter End -->
+
+
+
 
     <!-- Footer Start -->
     <div class="footer">
@@ -211,22 +230,11 @@
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-link">
-                                <h2>Services Areas</h2>
-                                <a href="">Civil Law</a>
-                                <a href="">Family Law</a>
-                                <a href="">Business Law</a>
-                                <a href="">Education Law</a>
-                                <a href="">Immigration Law</a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="footer-link">
-                                <h2>Useful Pages</h2>
-                                <a href="">About Us</a>
-                                <a href="">Practices</a>
-                                <a href="">Attorneys</a>
-                                <a href="">Case Studies</a>
-                                <a href="">FAQs</a>
+                                <h2>Menu</h2>
+                                <a href="">Beranda</a>
+                                <a href="">Tentang</a>
+                                <a href="">Kontak</a>
+                                <a href="">Buat Perjanjian</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -250,26 +258,25 @@
         </div>
         <div class="container footer-menu">
             <div class="f-menu">
-                <a href="">Terms of use</a>
-                <a href="">Privacy policy</a>
-                <a href="">Cookies</a>
-                <a href="">Help</a>
-                <a href="">FQAs</a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
         <div class="container copyright">
             <div class="row">
                 <div class="col-md-6">
-                    <p>&copy; <a href="https://htmlcodex.com/law-firm-website-template">HTML Codex</a>, All Right Reserved.</p>
+                    <p>&copy; <a href="">LawCorporate</a>, All Right Reserved.</p>
                 </div>
                 <div class="col-md-6">
-                    <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    <p>Designed By <a href="">RizqiIlham</a></p>
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer End -->
-
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     </div>
 
@@ -289,7 +296,7 @@
     <script src="js/jquery.scrollTo.js"></script>
     <script src="js/jquery.appear.js"></script>
     <script src="js/stellar.js"></script>
-    {{-- <script src="js/query.cubeportfolio.min.js"></script> --}}
+    <script src="js/jquery.cubeportfolio.min.js"></script>
     <script src="js/jquery.cubeportfolio.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/nivo-lightbox.min.js"></script>

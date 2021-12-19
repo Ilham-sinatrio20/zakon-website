@@ -9,7 +9,7 @@
     <meta content="Law Firm Website Template" name="description">
 
     <!-- Favicon -->
-    <link href="img/zakon-ico.ico" rel="icon">
+    <link href="../img/zakon-ico.ico" rel="icon">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -19,9 +19,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/cubeportfolio.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/cubeportfolio.min.css">
     <!-- Template Stylesheet -->
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <a class="btn_back" href="../lawyer">BACK</a>
+                        <a class="btn_back" href="/lawyer">BACK</a>
                     </div>
                 </nav>
                 <div class="cbp-l-member-name">Hotman Saris</div>
@@ -93,17 +93,18 @@
                                                                         <tr>
                                                                             <td>Nama</td>
                                                                             <td>:</td>
-                                                                            <td>Hotman Saris</td>
-                                                                        </tr>
+                                                                            <td> {{ $lawyer->nama_lawyer }}</td>
+                                                                        <!-- </tr>
                                                                         <tr>
                                                                             <td>Jenis kelamin</td>
                                                                             <td>:</td>
                                                                             <td>Laki-laki</td>
-                                                                        </tr>
+                                                                        </tr> -->
                                                                         <tr>
                                                                             <td>Tempat/ Tgl Lahir</td>
                                                                             <td>:&nbsp;&nbsp;</td>
-                                                                            <td>Nganjuk/ 19 November 1989</td>
+                                                                            <td> {{ $lawyer->place_birth }}, {{ $lawyer->date_birth }}</td>
+                                                                            <!-- <td>Nganjuk/ 19 November 1989</td> -->
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Kewarnegaraan</td>
@@ -113,7 +114,7 @@
                                                                         <tr>
                                                                             <td>Alamat</td>
                                                                             <td>:</td>
-                                                                            <td>Jalan Gajah Mada, Desa Mojokendil</td>
+                                                                            <td>{{ $lawyer->address }}</td>
                                                                         </tr>
                                                                     </table>
                                                                 </div>
@@ -363,26 +364,23 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="../lib/easing/easing.min.js"></script>
-    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/lib/isotope/isotope.pkgd.min.js"></script>
 
-    <script src="new/smoothscroll.js"></script>
-    <script src="new/aos.js"></script>
-
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.easing.min.js"></script>
-    <script src="../js/wow.min.js"></script>
-    <script src="../js/jquery.scrollTo.js"></script>
-    <script src="../js/jquery.appear.js"></script>
-    <script src="../js/stellar.js"></script>
-    <script src="../js/jquery.cubeportfolio.min.js"></script>
-    <script src="../js/jquery.cubeportfolio.min.js"></script>
-    <script src="../js/owl.carousel.min.js"></script>
-    <script src="../js/nivo-lightbox.min.js"></script>
-    <script src="../js/custom.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script src="/js/jquery.scrollTo.js"></script>
+    <script src="/js/jquery.appear.js"></script>
+    <script src="/js/stellar.js"></script>
+    <script src="/js/jquery.cubeportfolio.min.js"></script>
+    <script src="/js/jquery.cubeportfolio.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/nivo-lightbox.min.js"></script>
+    <script src="/js/custom.js"></script>
     <!-- Template Javascript -->
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>
