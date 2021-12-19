@@ -8,7 +8,13 @@ use App\Http\Requests\FeedbackRequest;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller {
+
+    // public function __construct() {
+    //     $this->middleware('auth');
+    // }
+
     public function showFeedback(){
+        // $feedback = Feedback::select('SELECT nama_sender, email_sender, phone_sender, pesan, DATE(created_at);')->get();
         $feedback = Feedback::all();
         return view('admin.feedback.feedback-home', ['feedback' => $feedback]);
     }

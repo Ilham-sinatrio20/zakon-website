@@ -43,7 +43,7 @@
                             <div class="ticket-info">
                               <div class="font-weight-600">{{ $fb->nama_sender }}</div>
                               <div class="bullet"></div>
-                              <div class="text-primary font-weight-600">{{ $fb->created_at }}</div>
+                              <div class="text-primary font-weight-600">{{ $fb->created_at->format('d-m-Y') }}</div>
                             </div>
                           </div>
                         </div>

@@ -402,6 +402,6 @@
 @section('component')
     <!-- Page Specific JS File -->
     <script src="../node_modules/prismjs/prism.js"></script>
-    <script src={{ asset('js/page/bootstrap-modal.js') }}></script>
-    <script src={{ asset('js/script/page/features-posts.js') }}></script>
+    <script src={{ asset('js/bootstrap-modal.js') }}></script>
+    <script src={{ asset('js/page/features-posts.js') }}></script>
 @endsection

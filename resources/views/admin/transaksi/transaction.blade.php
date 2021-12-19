@@ -21,6 +21,7 @@
                     <th>Transaction ID</th>
                     <th>Customer</th>
                     <th>Lawyer</th>
+                    <th>Jenis Meet</th>
                     <th>Status</th>
                     <th>Due Date</th>
                     <th>Action</th>
@@ -37,7 +38,8 @@
                     @else
                         <td><div class="badge badge-danger">{{ $trans->status }}</div></td>
                     @endif
-                        <td>{{ $trans->tgl_meet }}</td>
+                        <td>{{ date('d-m-Y', strtotime($trans->tgl_meet)) }}</td>
+                        <td>{{ $trans->jenis_meet }}</td>
                         <td><a href="{{ route('detail.transaksi', $trans->id_transaksi) }}" class="btn btn-primary">Detail</a></td>
                 </tr>
                 @endforeach

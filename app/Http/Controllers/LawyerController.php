@@ -8,8 +8,11 @@ use App\Http\Requests\LawyerRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class LawyerController extends Controller
-{
+class LawyerController extends Controller {
+    // public function __construct() {
+    //     $this->middleware('auth');
+    // }
+
     public function addLawyer(LawyerRequest $law){
         $law->validated();
 

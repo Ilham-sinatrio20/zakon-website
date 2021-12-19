@@ -10,11 +10,13 @@ class Feedback extends Model {
 
     protected $table = 'feedback';
     protected $primaryKey = 'id';
-    protected $timestamp = false;
+    // protected $timestamp = false;
     protected $fillable = [
         'nama_sender',
         'email_sender',
         'phone_sender',
-        'pesan'
+        'pesan',
+        'created_at',
+        'updated_at'
     ];
 }

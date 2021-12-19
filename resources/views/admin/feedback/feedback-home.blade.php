@@ -40,7 +40,7 @@
                                 <td class="text-center align-middle">{{ $i++; }}</td>
                                 <td>{{ $fb->nama_sender }}</td>
                                 <td>{{ $fb->phone_sender }}</td>
-                                <td>{{ $fb->created_at }}</td>
+                                <td>{{ $fb->created_at->format('d-m-Y') }}</td>
                                 <td><a href="{{ route('detail.feed', $fb->id) }}" class="btn btn-primary">Detail</a></td>
                             </tr>
                             @endforeach

@@ -128,5 +128,5 @@ $(document).ready(function (e) {
 @endsection
 
 @section('component')
-    <script src={{ asset('js/script/page/features-post-create.js') }}></script>
+    <script src={{ asset('js/page/features-post-create.js') }}></script>
 @endsection

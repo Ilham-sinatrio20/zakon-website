@@ -10,6 +10,10 @@ use Illuminate\Http\Request;
 use Barryvdh\DomPDF\PDF;
 
 class TransaksiController extends Controller {
+    // public function __construct() {
+    //     $this->middleware('auth');
+    // }
+
     public function showTransaction() {
         $data = Transaksi::join('lawyer', 'transaksi.lawyer_id', '=', 'lawyer.id')->orderBy('id_transaksi', 'ASC')->get();
         return view('admin.transaksi.transaction', ['transaksi' => $data]);

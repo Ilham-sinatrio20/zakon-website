@@ -18,7 +18,8 @@ class TransaksiFactory extends Factory {
             'nama_klien' => $this->faker->name,
             'email_klien' => $this->faker->email,
             'phone' => $this->faker->phoneNumber,
-            'tgl_meet' => $this->faker->dateTimeBetween('-5 years', 'now'),
+            'tgl_meet' => $this->faker->dateTimeBetween('-2 years', 'now'),
+            'jenis_meet' => $this->faker->word,
             'status' => $this->faker->word,
             'keterangan' => $this->faker->sentences(4, true)
         ];

@@ -560,5 +560,5 @@
 @endsection
 
 @section('component')
-        <script src={{ asset('js/script/page/index-0.js') }}></script>
+        <script src={{ asset('js/page/index-0.js') }}></script>
 @endsection

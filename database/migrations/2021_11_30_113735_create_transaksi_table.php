@@ -19,6 +19,7 @@ class CreateTransaksiTable extends Migration {
             $table->string('phone', 20);
             $table->date('tgl_meet');
             $table->string('status', 35);
+            $table->string('jenis_meet', 20);
             $table->longText('keterangan');
             $table->timestamps();
 
