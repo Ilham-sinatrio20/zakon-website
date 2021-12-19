@@ -243,8 +243,41 @@ a:focus {
     border-radius: 0;
 }
 
+.nav-bar .btn_back {
+    padding: 5px 40px;
+    /* width: 50%; */
+    text-align: center;
+    background-color: #aa9166;
+    color: white;
+    border-radius: 50px;
+    border: 2px solid #aa9166;
+}
+
+.nav-bar .btn_back:hover {
+    background: #1d1911;
+    color: white;
+}
+
 .nav-bar .btn:hover {
     background: #aa9166;
+}
+
+.nav-bar .cbp-l-member-name {
+    font: bold 22px/12px "Open Sans", sans-serif;
+    margin-bottom: 6px;
+    text-align: center;
+    color: #aa9166;
+}
+
+.nav-bar .cbp-l-member-position {
+    font: 400 18px "Open Sans", sans-serif;
+    text-align: center;
+}
+
+.nav-bar .cbp-l-desc {
+    font: 400 15px "Open Sans", sans-serif;
+    margin-top: 15px;
+    text-align: center;
 }
 
 @media (min-width: 992px) {
@@ -503,6 +536,32 @@ a:focus {
 
 .page-header a:last-child::after {
     display: none;
+}
+
+.page-header2 {
+    position: relative;
+    margin-bottom: 0px;
+    padding: 50px 0;
+    text-align: center;
+    background: #ffffff;
+}
+
+.page-header2 .cbp-l-member-img {
+    /* float: left; */
+    width: 21%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    border: 1px solid #bebebe
+}
+
+.page-header2 .cbp-l-member-img img {
+    /* width: 40px;
+    height: 60px; */
+    width: 210px;
+    height: 240px;
+    display: block;
 }
 
 @media (max-width: 767.98px) {
