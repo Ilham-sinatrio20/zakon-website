@@ -21,6 +21,11 @@
                         </form>
                     </div>
                 </div>
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                        <p>{{ $message }}</p>
+                    </div>
+                 @endif
                 <div class="card-body p-0">
                     <div class="table-responsive">
                         <table class="table table-striped" id="sortable-table">

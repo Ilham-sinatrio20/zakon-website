@@ -15,7 +15,6 @@ class LawyerFactory extends Factory
     protected $model = Lawyer::class;
 
     public function definition() {
-        $edu = 'S2 Hukum Universitas ';
         return [
             'nama_lawyer' => $this->faker->name(),
             'phone' => $this->faker->phoneNumber(),

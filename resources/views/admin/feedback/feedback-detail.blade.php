@@ -56,11 +56,13 @@
                               <div class="form-group">
                                 <textarea class="summernote form-control" placeholder="Type a reply ..."></textarea>
                               </div>
-                              <div class="form-group text-right">
-                                <button class="btn btn-primary btn-lg">
-                                  Reply
-                                </button>
-                              </div>
+                              {{-- <form action="{{ route('send.feedback', $fb->id_transaksi) }}" method="POST" enctype="multipart/form-data"> --}}
+                                <div class="form-group text-right">
+                                    <a href="{{ route('send.feedback', $fb->id) }}" class="btn btn-primary btn-lg">
+                                        Send Response
+                                    </a>
+                                </div>
+                              {{-- </form> --}}
                             </form>
                           </div>
                         </div>

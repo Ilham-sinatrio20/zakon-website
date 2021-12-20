@@ -59,6 +59,7 @@ Route::prefix('/')->middleware('auth')->group(function(){
     // Admin Feedback
     Route::get('/admin/feedback/', [FeedbackController::class, 'showFeedback'])->name('home.feed');
     Route::get('/admin/feedback/{id}/detail', [FeedbackController::class, 'showById'])->name('detail.feed');
+    Route::get('/admin/feedback/{id}/response', [FeedbackController::class, 'sendEmail'])->name('send.feedback');
 });
 
 // Route::post('admin/addlawyer', [LawyerController::class, 'addLawyer'])->name('add.lawyer')->middleware('guest');
