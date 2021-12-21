@@ -62,35 +62,10 @@ Route::prefix('/')->middleware('auth')->group(function(){
     Route::get('/admin/feedback/{id}/response', [FeedbackController::class, 'sendEmail'])->name('send.feedback');
 });
 
-// Route::post('admin/addlawyer', [LawyerController::class, 'addLawyer'])->name('add.lawyer')->middleware('guest');
-
-// Route::get('admin/transaksi/transaction', [TransaksiController::class, 'showTransaction'])->name('admin.transaction-all')->middleware('guest');
-
-// Route::get('admin/{id}/edit', [LawyerController::class, 'showByID'])->name('admin.edit')->middleware('guest');
-
-// Route::get('admin/{id}/detail-lawyer', [LawyerController::class, 'detail'])->name('admin.detail')->middleware('guest');
-
-// Route::put('admin/{id}/edit-lawyer', [LawyerController::class, 'updateLawyer'])->name('admin.update')->middleware('guest');
-
-// Route::delete('admin/{id}/delete-lawyer', [LawyerController::class, 'delete'])->name('admin.delete')->middleware('guest');
-
-// Route::get('admin/list-lawyer', [LawyerController::class, 'index'])->name('admin.list-lawyer')->middleware('guest');
-
-// Route::get('admin/add-lawyer', function(){
-//     return view('admin.addlawyer');
-// });
-
-// Route::delete('admin/transaksi/{id}/delete', [TransaksiController::class, 'deleteTiket'])->name('delete.transaksi')->middleware('guest');
-
-// Route::get('admin/transaksi/{id}/detail', [TransaksiController::class, 'ticketChecking'])->name('detail.transaksi')->middleware('guest');
-
-// Route::put('admin/transaksi/{id}/update', [TransaksiController::class, 'updateTicket'])->name('update.transaksi')->middleware('guest');
-
-// Route::get('/admin/feedback/{id}/detail', [FeedbackController::class, 'showById'])->name('detail.feed')->middleware('guest');
-
-// Route::get('/admin/feedback/', [FeedbackController::class, 'showFeedback'])->name('home.feed')->middleware('guest');
-
 Route::get('/lawyer@ekonomi',[LawyerController::class, 'showLayer']);
+
+Route::post('/', [TransaksiController::class, 'inputTicket'])->name('jadwalkan');
+Route::get('/cari', [TransaksiController::class, 'userTicketCheck'])->name('cari.tiket');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

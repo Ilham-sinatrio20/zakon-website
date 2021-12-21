@@ -32,15 +32,13 @@ class FeedbackController extends Controller {
     }
 
     public function sendEmail($id){
-        $user = Feedback::select('nama_sender')->where('id', $id)->first();
-        $email = 'sinatrio20@gmail.com';
+        $user = Feedback::where('id', $id)->first();
 
         $mail = [
-            'title' => 'Thanks for your feedback',
-            'url' => 'https://zakon.com'
+            'nama_sender' => $user->nama_sender,
         ];
 
-        Mail::to($email)->send(new FeedbackEmail($mail), $user->toArray());
+        Mail::to($user->email_sender)->queue(new FeedbackEmail($mail));
 
         return redirect()->route('home.feed')->with('success', 'Email succesfully to send');
 

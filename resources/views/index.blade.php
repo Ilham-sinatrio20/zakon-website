@@ -45,7 +45,7 @@
                         </div>
                         <div class="ml-auto">
                             <a class="btn" href="#janji">BUAT PERJANJIAN</a>
-                            
+
                         </div>
                     </div>
                 </nav>
@@ -528,13 +528,13 @@
                                         <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
                                          </div> -->
                                     </div>
-                                
+
                             </form>
                         </div>
                     </div>
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <form class="contact_bg">
+                        <form class="contact_bg" action="{{ route('jadwalkan') }}" method="POST">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="col-md-12">
@@ -555,19 +555,23 @@
                                             <option value="offline">Offline</option>
                                         </select>
                                     </div>
-                                    
+
                                     <div class="col-md-12">
                                         <input type="checkbox" id="setuju" name="setuju" value="setuju">
                                         <label for="setuju">Menyetujui ketentuan online & offline</label><br>
                                     </div>
                                     <br><br>
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                        <button class="send">Cari</button>
-                                        <input class="cek-tiket" placeholder="Cek tiket" name="cek_tiket">
-                                    </div>
+                                    <form action="{{ route('cari.tiket') }}" method="POST">
+                                        @csrf
+                                        @method('GET')
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                            <button class="send">Cari</button>
+                                            <input class="cek-tiket" placeholder="Cek tiket" name="id_tiket">
+                                        </div>
+                                    </form>
                                     <br><br><br><br>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                        <button class="send">Kirim</button>
+                                        <button type="submit" class="send">Kirim</button>
                                     </div>
                                 </div>
                             </div>

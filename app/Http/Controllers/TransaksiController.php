@@ -7,7 +7,9 @@ use App\Models\Transaksi;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TransaksiRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Barryvdh\DomPDF\PDF;
+use App\Mail\WelcomeMail;
 
 class TransaksiController extends Controller {
     // public function __construct() {
@@ -17,6 +19,11 @@ class TransaksiController extends Controller {
     public function showTransaction() {
         $data = Transaksi::join('lawyer', 'transaksi.lawyer_id', '=', 'lawyer.id')->orderBy('id_transaksi', 'ASC')->get();
         return view('admin.transaksi.transaction', ['transaksi' => $data]);
+    }
+
+    public function userTicketCheck($id) {
+        $trans = Transaksi::join('lawyer', 'transaksi.lawyer_id', '=', 'lawyer.id')->where('id_transaksi', $id)->first();
+        return view('admin.transaksi.detail-transaksi', ['trans' => $trans]);
     }
 
     public function ticketChecking($id) {
@@ -60,5 +67,13 @@ class TransaksiController extends Controller {
         $tiket->status = $trace->status;
         $tiket->keterangan = $trace->keterangan;
         $tiket->save();
+
+        $email = [
+            'nama_klien' => $tiket->nama_klien,
+            'tgl_meet' => $tiket->tgl_meet
+        ];
+
+        Mail::to($tiket->email)->queue(new WelcomeMail($email));
+        return back();
     }
 }
