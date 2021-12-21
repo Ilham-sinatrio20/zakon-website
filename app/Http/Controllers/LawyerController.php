@@ -30,11 +30,14 @@ class LawyerController extends Controller {
         $input->place_birth = $law->place_birth;
         $input->date_birth = $law->date_birth;
         $input->address = $law->address;
+        $input->negara = $law->negara;
+        $input->last_edu = $law->last_edu;
+        $input->website = $law->website;
         $input->email = $law->email;
         $input->jenis_hukum = $law->jenis_hukum;
-        $input->deskripsi = $law->deskripsi;
+        $input->pengalaman = $law->pengalaman;
         $input->save();
-        return back();
+        return redirect()->route('admin.list-lawyer')->with('success', 'Successfull to add Lawyer');
     }
 
     public function index(){
@@ -101,9 +104,12 @@ class LawyerController extends Controller {
         $lawyer->place_birth = $law->place_birth;
         $lawyer->date_birth = $law->date_birth;
         $lawyer->address = $law->address;
+        $lawyer->negara = $law->negara;
+        $lawyer->last_edu = $law->last_edu;
+        $lawyer->website = $law->website;
         $lawyer->email = $law->email;
         $lawyer->jenis_hukum = $law->jenis_hukum;
-        $lawyer->deskripsi = $law->deskripsi;
+        $lawyer->pengalaman = $law->pengalaman;
         $lawyer->save();
         return redirect()->route('admin.list-lawyer')->with('success', 'Data successfully to update');
     }

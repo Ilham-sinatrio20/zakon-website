@@ -30,10 +30,13 @@ class LawyerRequest extends FormRequest {
                     'place_birth' => 'required|string',
                     'date_birth' => 'required|date',
                     'address' => 'required|string',
+                    'negara' => 'required|string',
+                    'last_edu' => 'required|string',
+                    'website' => 'required|string',
                     'picture' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:1024',
                     'email' => 'required|string',
                     'jenis_hukum' => 'required|string',
-                    'deskripsi' => 'required|string'
+                    'pengalaman' => 'required|string'
                 ];
             } break;
             case 'PUT': {
@@ -43,10 +46,13 @@ class LawyerRequest extends FormRequest {
                     'place_birth' => 'sometimes|string',
                     'date_birth' => 'sometimes|date',
                     'address' => 'sometimes|string',
+                    'kewarganegaraan' => 'sometimes|string',
+                    'last_edu' => 'sometimes|string',
+                    'website' => 'sometimes|string',
                     'picture' => 'sometimes|image|mimes:jpg,png,jpeg,gif,svg|max:1024',
                     'email' => 'sometimes|string',
                     'jenis_hukum' => 'sometimes|string',
-                    'deskripsi' => 'sometimes|string'
+                    'pengalaman' => 'sometimes|string'
                 ];
             } break;
         }

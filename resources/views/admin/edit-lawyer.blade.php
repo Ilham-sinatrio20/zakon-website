@@ -2,16 +2,16 @@
 
 @section('content')
     <div class="section-header">
-            <div class="section-header-back">
-              <a href="/admin/list-lawyer" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
-            </div>
-            <h1>Edit Lawyer</h1>
-            <div class="section-header-breadcrumb">
-              <div class="breadcrumb-item active"><a href="{{ route('home') }}">Dashboard</a></div>
-              <div class="breadcrumb-item"><a href="{{ route('admin.list-lawyer') }}">Lawyer</a></div>
-              <div class="breadcrumb-item">Edit Lawyer</div>
-            </div>
-          </div>
+        <div class="section-header-back">
+            <a href="/admin/list-lawyer" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <h1>Edit Lawyer</h1>
+        <div class="section-header-breadcrumb">
+            <div class="breadcrumb-item active"><a href="{{ route('home') }}">Dashboard</a></div>
+            <div class="breadcrumb-item"><a href="{{ route('admin.list-lawyer') }}">Lawyer</a></div>
+            <div class="breadcrumb-item">Edit Lawyer</div>
+        </div>
+    </div>
 
           <div class="section-body">
             <h2 class="section-title">Edit Lawyer</h2>
@@ -87,6 +87,24 @@
                                 </div>
                                 </div>
                                 <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Kewarganegaraan</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <input type="text" class="form-control" name="negara" id="negara" value="{{ $lawyer->negara }}">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pendidikan Terakhir</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <input type="text" class="form-control" name="last_edu" id="last_edu" value="{{ $lawyer->last_edu }}">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Website Pribadi</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <input type="text" class="form-control" name="website" id="website" value="{{ $lawyer->website }}">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Foto Pengacara</label>
                                     <div class="col-sm-12 col-md-7">
                                         <div id="image-preview" class="image-preview">
@@ -97,15 +115,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi</label>
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pengalaman</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <textarea class="summernote-simple form-control" name="deskripsi" id="deskripsi" style="height: 100px">{{ $lawyer->deskripsi }}</textarea>
+                                        <textarea class="summernote-simple form-control" name="deskripsi" id="deskripsi" style="height: 100px">{{ $lawyer->pengalaman }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                     <div class="col-sm-12 col-md-7">
-                                        <button class="btn btn-primary">Update Data Lawyer</button>
+                                        <button type="submit" class="btn btn-primary">Update Data Lawyer</button>
                                     </div>
                                 </div>
                             </form>

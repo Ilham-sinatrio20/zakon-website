@@ -44,9 +44,13 @@ Auth::routes();
 Route::prefix('/')->middleware('auth')->group(function(){
 
     // Admin Lawyer
+    Route::get('admin/add-lawyer', function(){
+        return view('admin.addlawyer');
+    });
     Route::get('admin/list-lawyer', [LawyerController::class, 'index'])->name('admin.list-lawyer');
     Route::post('admin/addlawyer', [LawyerController::class, 'addLawyer'])->name('add.lawyer');
     Route::get('admin/{id}/edit', [LawyerController::class, 'showByID'])->name('admin.edit');
+    Route::put('admin/{id}/update', [LawyerController::class, 'updateLawyer'])->name('admin.update');
     Route::get('admin/{id}/detail-lawyer', [LawyerController::class, 'detail'])->name('admin.detail');
     Route::delete('admin/{id}/delete-lawyer', [LawyerController::class, 'delete'])->name('admin.delete');
 

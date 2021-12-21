@@ -41,7 +41,7 @@
                                             <div class="text-muted d-inline font-weight-normal">
                                                 <div class="slash"></div>Pengacara Hukum {{ $lawyer->jenis_hukum }}</div>
                                         </div>
-                                        {{ $lawyer->deskripsi }}
+                                        {{ $lawyer->pengalaman }}
                                     </div>
                                     <div class="card-footer text-center">
                                         <div class="font-weight-bold mb-2">Follow Ujang On</div>
