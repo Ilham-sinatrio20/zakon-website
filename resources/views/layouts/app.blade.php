@@ -25,6 +25,7 @@
 
      <!-- CSS Libraries -->
     <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Template CSS -->
     <link rel="stylesheet" href={{ asset('style/style.css') }}>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LawyerController;
 use App\Http\Controllers\TransaksiController;
@@ -47,6 +48,7 @@ Route::prefix('/')->middleware('auth')->group(function(){
     Route::get('admin/add-lawyer', function(){
         return view('admin.addlawyer');
     });
+
     Route::get('admin/list-lawyer', [LawyerController::class, 'index'])->name('admin.list-lawyer');
     Route::post('admin/addlawyer', [LawyerController::class, 'addLawyer'])->name('add.lawyer');
     Route::get('admin/{id}/edit', [LawyerController::class, 'showByID'])->name('admin.edit');
@@ -64,6 +66,10 @@ Route::prefix('/')->middleware('auth')->group(function(){
     Route::get('/admin/feedback/', [FeedbackController::class, 'showFeedback'])->name('home.feed');
     Route::get('/admin/feedback/{id}/detail', [FeedbackController::class, 'showById'])->name('detail.feed');
     Route::get('/admin/feedback/{id}/response', [FeedbackController::class, 'sendEmail'])->name('send.feedback');
+
+    // Edit Profile
+    Route::get('admin/{id}/detail-profile', [HomeController::class, 'showDetail'])->name('detail.profile');
+    Route::put('admin/{id}/edit-profile', [HomeController::class, 'updateProfile'])->name('edit.profile');
 });
 
 Route::get('/lawyer@ekonomi',[LawyerController::class, 'showLayer']);

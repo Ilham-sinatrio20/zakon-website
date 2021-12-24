@@ -109,6 +109,7 @@
                                         <div id="image-preview" class="image-preview">
                                             <label for="image-upload" id="image-label">Choose File</label>
                                             <input type="file" name="picture" id="picture" required>
+                                            <img id="preview-image" width="250px">
                                         </div>
                                     </div>
                                 </div>
@@ -133,11 +134,13 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <script type="text/javascript">
+// Alert Confrimation
+// Show Image
 $(document).ready(function (e) {
-    $('#image').change(function(){
+    $('#picture').change(function(){
         let reader = new FileReader();
         reader.onload = (e) => {
-            $('#image-preview').attr('src', e.target.result);
+            $('#preview-image').attr('src', e.target.result);
         }
             reader.readAsDataURL(this.files[0]);
     });

@@ -7,11 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LawyerRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LawyerController extends Controller {
-    // public function __construct() {
-    //     $this->middleware('auth');
-    // }
 
     public function addLawyer(LawyerRequest $law){
         $law->validated();
@@ -37,6 +35,7 @@ class LawyerController extends Controller {
         $input->jenis_hukum = $law->jenis_hukum;
         $input->pengalaman = $law->pengalaman;
         $input->save();
+        Alert::success('Insert Data Success', 'Success Added Data');
         return redirect()->route('admin.list-lawyer')->with('success', 'Successfull to add Lawyer');
     }
 
@@ -67,7 +66,9 @@ class LawyerController extends Controller {
 
     public function detail($id){
         $lawyer = Lawyer::where('id', $id)->first();
-        return view('admin.detail-lawyer', ['lawyer' => $lawyer]);
+        return view('admin.detail-lawyer', [
+            'lawyer' => $lawyer,
+        ]);
     }
 
     public function showByID($id){
@@ -82,7 +83,8 @@ class LawyerController extends Controller {
 
     public function delete($id){
         Lawyer::find($id)->delete();
-        return redirect()->route('admin.list-lawyer')->with('success', 'Data successfully to delete');
+        Alert::success('Delete Success', 'Success Delete Data');
+        return redirect()->route('admin.list-lawyer');
     }
 
     public function updateLawyer(LawyerRequest $law, $id){
@@ -111,6 +113,7 @@ class LawyerController extends Controller {
         $lawyer->jenis_hukum = $law->jenis_hukum;
         $lawyer->pengalaman = $law->pengalaman;
         $lawyer->save();
+        Alert::success('Update Success', 'Success Update Data');
         return redirect()->route('admin.list-lawyer')->with('success', 'Data successfully to update');
     }
 }

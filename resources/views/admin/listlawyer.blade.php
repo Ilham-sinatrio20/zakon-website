@@ -331,7 +331,7 @@
                                     <td class="text-truncate">
                                         {{ $state->nama_lawyer }}
                                         <div class="table-links d-flex justify-content-between">
-                                            <form action="{{ route('admin.delete', $state->id) }}" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ route('admin.delete', $state->id) }}" method="POST" enctype="multipart/form-data" onsubmit="return confirm('Are you sure to delete data?')">
                                                 <div class="bullet"></div>
                                                     <a href="{{ route('admin.detail', $state->id) }}">Show Detail</a>
                                                 <div class="bullet"></div>
@@ -339,7 +339,7 @@
                                                 <div class="bullet"></div>
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="text-danger" style="border: none; font-style: normal;background: none;padding: 0;">
+                                                <button class="text-danger" style="border: none; font-style: normal;background: none;padding: 0;">
                                                     Trash
                                                 </button>
                                             </form>

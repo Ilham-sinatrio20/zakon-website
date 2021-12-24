@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\HomeRequest;
 use App\Models\Feedback;
 use App\Models\Lawyer;
 use App\Models\Transaksi;
@@ -35,5 +37,19 @@ class HomeController extends Controller {
             'countFeedback' => $countFeedback,
             'userList' => $userList
         ]);
+    }
+
+    public function showDetail($id){
+        $detail = User::where('id', $id)->get();
+        return view('admin.user-edit');
+    }
+
+    public function updateProfile(HomeRequest $hr, $id){
+        $hr->validated();
+        $detail = User::where('id', $id)->first();
+        $detail->name = $hr->name;
+        $detail->email = $hr->email;
+        $detail->save();
+        return redirect()->route('home')->with('success', 'Successfull to update Data');
     }
 }

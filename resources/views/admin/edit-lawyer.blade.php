@@ -110,14 +110,14 @@
                                         <div id="image-preview" class="image-preview">
                                             <label for="image-upload" id="image-label">Choose File</label>
                                             <input type="file" name="picture" id="picture" value={{ $lawyer->picture }}>
-                                            <img src="{{ asset('images/lawyer/'.$lawyer->picture) }}" alt="images" width="250px">
+                                            <img src="{{ asset('images/lawyer/'.$lawyer->picture) }}" id="preview-image" alt="images" width="250px">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pengalaman</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <textarea class="summernote-simple form-control" name="deskripsi" id="deskripsi" style="height: 100px">{{ $lawyer->pengalaman }}</textarea>
+                                        <textarea class="summernote-simple form-control" name="pengalaman" id="pengalaman" style="height: 100px">{{ $lawyer->pengalaman }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
@@ -136,10 +136,10 @@
 
             <script type="text/javascript">
             $(document).ready(function (e) {
-                $('#image').change(function(){
+                $('#picture').change(function(){
                     let reader = new FileReader();
                     reader.onload = (e) => {
-                        $('#image-preview').attr('src', e.target.result);
+                        $('#preview-image').attr('src', e.target.result);
                     }
                         reader.readAsDataURL(this.files[0]);
                 });

@@ -149,7 +149,7 @@
                     <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div></a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-title">Logged in 5 min ago</div>
-                        <a href="features-profile.html" class="dropdown-item has-icon">
+                        <a href="{{ route('detail.profile', Auth::user()->id) }}" class="dropdown-item has-icon">
                             <i class="far fa-user"></i> Profile
                         </a>
                         <a href="features-activities.html" class="dropdown-item has-icon">
@@ -211,8 +211,8 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Admin Settings</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="auth-login.html">Admin Profile</a></li>
-                            <li><a href="{{ route('password.update') }}">Forgot Password</a></li>
+                            <li><a href="{{ route('detail.profile', Auth::user()->id) }}">Admin Profile</a></li>
+                            <li><a href="{{ route('password.update', Auth::user()->id) }}">Forgot Password</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                             {{-- <li><a href="{{ route('') }}">Reset Password</a></li> --}}
                             <li>
@@ -232,6 +232,7 @@
             </div>
             <div class="main-content">
                 <section class="section">
+                    @include('sweetalert::alert')s
                     @yield('content')
                 </section>
             </div>
