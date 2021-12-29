@@ -14,6 +14,7 @@ class Transaksi extends Model {
     // protected $timestamp = false;
     protected $fillable = [
         'lawyer_id',
+        'jenis_hukum',
         'nama_klien',
         'email_klien',
         'tgl_meet',
