@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lawyer;
+use App\Models\Feedback;
+use App\Models\Transaksi;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LawyerRequest;
 use Illuminate\Http\Request;
@@ -33,7 +35,22 @@ class LawyerFEController extends Controller {
         return back();
     }
 
-    public function index(){
+    public function indeks(){
+        $count = Lawyer::count();
+        $lawyer = Lawyer::all();
+        $transaksi = Transaksi::all();
+        $feedback = Feedback::all();
+        $tampilEkonomi = Lawyer::where('jenis_hukum', 'Ekonomi')->get();
+        $tampilKeluarga = Lawyer::where('jenis_hukum', 'Keluarga')->get();
+        $tampilPidana = Lawyer::where('jenis_hukum', 'Pidana')->get();
+        $tampilNegara = Lawyer::where('jenis_hukum', 'Negara')->get();
+        return view('index', ['lawyer' => $lawyer, 'transaksi' => $transaksi, 
+        'feedback' => $feedback, 'count' => $count, 'tampilEkonomi' => $tampilEkonomi,
+        'tampilKeluarga' => $tampilKeluarga, 'tampilPidana' => $tampilPidana, 
+        'tampilNegara' => $tampilNegara]);
+    }
+
+    public function lawyer(){
         $count = Lawyer::count();
         $lawyer = Lawyer::all();
         return view('lawyer', ['lawyer' => $lawyer, 'count' => $count]);

@@ -43,4 +43,16 @@ class FeedbackController extends Controller {
         return redirect()->route('home.feed')->with('success', 'Email succesfully to send');
 
     }
+
+    public function inputFeedback(Request $respon) {
+        
+        $trace = new Feedback();
+        $trace->nama_sender = $respon->input('nama_sender');
+        $trace->email_sender = $respon->input('email_sender');
+        $trace->phone_sender = $respon->input('phone_sender');
+        $trace->pesan = $respon->input('pesan');
+        $trace->save();
+        return redirect('index')->with('message', 'Pesan berhasil ditambahkan');
+        return redirect('index') ;
+    }
 }

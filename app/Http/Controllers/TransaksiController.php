@@ -76,4 +76,36 @@ class TransaksiController extends Controller {
         Mail::to($tiket->email)->queue(new WelcomeMail($email));
         return back();
     }
+
+    public function inputsTicket(Request $tiket) {
+        $tiket->validated();
+        $trace = new Transaksi;
+        $trace->lawyer_id = Lawyer::where('nama_lawyer', $tiket->pengacara)->value('id');
+        $trace->nama_klien = $tiket->nama_klien;
+        $trace->email_klien = $tiket->email_klien;
+        $trace->phone = $tiket->phone;
+        $trace->jenis_hukum = $tiket->jenis_hukum;
+        $trace->tgl_meet = $tiket->tgl_meet;
+        $trace->waktu_meet = $tiket->waktu_meet;
+        $trace->jenis_meet = $tiket->jenis_meet;
+        $trace->deskripsi = $tiket->deskripsi;
+
+        $trace->save();
+
+        // $email = [
+        //     'nama_klien' => $tiket->nama_klien,
+        //     'tgl_meet' => $tiket->tgl_meet
+        // ];
+
+        $transaksi = Transaksi::where('waktu_meet', $tiket->waktu_meet)->first();
+        
+        // Mail::to($tiket->email)->queue(new WelcomeMail($email));
+        return view('hasilCari', ['transaksi' => $transaksi]);
+    }
+
+    public function cari($id){
+        $transaksi = Transaksi::where('id_transaksi', $id)->first();
+        return view('hasilCari', ['transaksi' => $transaksi]);
+    }
+    
 }

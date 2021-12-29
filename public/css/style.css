@@ -547,7 +547,6 @@ a:focus {
 }
 
 .page-header2 .cbp-l-member-img {
-    /* float: left; */
     width: 21%;
     height: auto;
     margin-left: auto;
@@ -557,9 +556,7 @@ a:focus {
 }
 
 .page-header2 .cbp-l-member-img img {
-    /* width: 40px;
-    height: 60px; */
-    width: 210px;
+    width: 240px;
     height: 240px;
     display: block;
 }
@@ -601,34 +598,6 @@ a:focus {
     white-space: nowrap;
     z-index: 1;
 }
-
-
-/* .section-header h2::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 7px;
-    left: 0;
-    top: 21px;
-    background: transparent;
-    border-top: 1px solid #aa9166;
-    border-bottom: 1px solid #aa9166;
-    z-index: -1;
-} */
-
-
-/* .section-header h2::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 7px;
-    left: 0;
-    bottom: 20px;
-    background: transparent;
-    border-top: 1px solid #aa9166;
-    border-bottom: 1px solid #aa9166;
-    z-index: -1;
-} */
 
 @media (max-width: 767.98px) {
     .section-header h2 {
@@ -2039,11 +2008,6 @@ a:focus {
     width: 100%;
 }
 
-.white_bg {
-    background-color: #fff;
-    padding: 40px 30px 30px 30px
-}
-
 .contact .titlepage {
     text-align: center;
 }
@@ -2104,46 +2068,83 @@ a:focus {
     transition: all 0.3s ease-in;
 }
 
+.contact .contact_bg2 {
+    width: 200%;
+    padding: 0;
+    padding: 60px 0px;
+}
 
-/* .cari-form {
-    position: relative;
-} */
+.contact .contact_bg .contactus,
+.contact .contact_bg2 .contactus {
+    border: #e8e8e8 solid 1px;
+    padding: 12px 19px;
+    margin-bottom: 26px;
+    border-radius: 1px;
+    color: #000;
+    width: 100%;
+    /* margin-right: 20px; */
+}
+
+.contact .contact_bg .textarea,
+.contact .contact_bg2 .textarea {
+    margin-bottom: 25px;
+    padding: 29px 19px;
+    color: #000 !important;
+    width: 100%;
+    border: #e8e8e8 solid 1px;
+    border-radius: 1px;
+    padding-top: 50px;
+}
+
+.contact .contact_bg .send,
+.contact .contact_bg2 .send {
+    font-size: 16px;
+    border-radius: 50px;
+    border: #aa9166 solid 1px;
+    background-color: #aa9166;
+    color: #fff;
+    padding: 11px 67px;
+    float: left;
+    transition: all 0.3s ease-in;
+}
+
+.contact .contact_bg .send:hover,
+.contact .contact_bg2 .send:hover {
+    background-color: #000;
+    border: #aa9166 solid 1px;
+    color: #fff;
+    transition: all 0.3s ease-in;
+}
 
 .cek-tiket {
     font-size: 16px;
     border-radius: 50px;
-    /* width: 30%; */
-    /* margin-left: 150px; */
-    /* margin-left: 200px; */
     width: 35%;
     border: #aa9166 solid 1px;
     background-color: #fff;
     color: black;
     padding: 11px;
-    float: right;
+    float: left;
+    margin-right: 2px;
     transition: all 0.3s ease-in;
 }
 
-
-/* .cari-form #jenis-hukum {
-    width: 96%;
-    padding-right: 50px;
-} */
-
-
-/* .cari-form button {
-    background: #aa9166;
-    border: 0;
-    color: #ffffff;
-    position: absolute;
-    right: -2em;
-    width: 40%;
+#popup img {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    margin-top: -45px;
+    z-index: -1;
+    /* overflow: hidden; */
 }
 
-.cari-form button:hover {
-    background: #202020;
-    color: #ffffff;
-} */
+@media (max-width: 767.98px) {
+    .contact .contact_bg2 {
+        width: 100%;
+        padding: 0;
+        padding: 60px 0px;
+    }
+}
 
 
 /** end contact section **/

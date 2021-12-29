@@ -82,31 +82,13 @@
 
 
                         <div id="grid-container" class="cbp-l-grid-team">
-                       
-                        
                             <ul>
-                            @foreach ($lawyer as $lawyers)
-                                <!-- <li class="cbp-item ekonomi">
-                                    <a href="lawyer/lawyer1" class="cbp-caption cbp-singlePage">
-                                        <div class="cbp-caption-defaultWrap">
-                                            <img src="img/lawyer/lawyer1.png" alt="" width="100%">
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <div class="cbp-l-caption-text">VIEW PROFILE</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="lawyer/lawyer1" class="cbp-singlePage cbp-l-grid-team-name">{{ $lawyers->nama_lawyer }}</a>
-                                    <div class="cbp-l-grid-team-position">Ekonomi</div>
-                                </li>
-                                 -->
-                                <li class="cbp-item pidana">
+                                @foreach ($lawyer as $lawyers)
+
+                                <li class="cbp-item {{ $lawyers->jenis_hukum }}">
                                     <a href="{{ route('detailLawyer', $lawyers->id) }}" class="cbp-caption">
                                         <div class="cbp-caption-defaultWrap">
-                                            <img src="img/lawyer/lawyer2.png" alt="" width="100%">
+                                            <img src="{{ $lawyers->picture }}" alt="" width="100%">
                                         </div>
                                         <div class="cbp-caption-activeWrap">
                                             <div class="cbp-l-caption-alignCenter">
@@ -117,76 +99,11 @@
                                         </div>
                                     </a>
                                     <a href="{{ route('detailLawyer', $lawyers->id) }}" class="cbp-l-grid-team-name">{{ $lawyers->nama_lawyer }}</a>
-                                    <div class="cbp-l-grid-team-position">Pidana</div>
+                                    <div class="cbp-l-grid-team-position">{{ $lawyers->jenis_hukum }}</div>
                                 </li>
-                                <!-- <li class="cbp-item pidana">
-                                    <a href="lawyer/lawyer2" class="cbp-caption cbp-singlePage">
-                                        <div class="cbp-caption-defaultWrap">
-                                            <img src="img/lawyer/lawyer2.png" alt="" width="100%">
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <div class="cbp-l-caption-text">VIEW PROFILE</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="lawyer/lawyer2" class="cbp-singlePage cbp-l-grid-team-name">{{ $lawyers->nama_lawyer }}</a>
-                                    <div class="cbp-l-grid-team-position">Pidana</div>
-                                </li> -->
-                                <!-- <li class="cbp-item pidana">
-                                    <a href="doctors/member3.html" class="cbp-caption cbp-singlePage">
-                                        <div class="cbp-caption-defaultWrap">
-                                            <img src="img/lawyer/lawyer4.png" alt="" width="100%">
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <div class="cbp-l-caption-text">VIEW PROFILE</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="doctors/member3" class="cbp-singlePage cbp-l-grid-team-name">Adnan Boyang</a>
-                                    <div class="cbp-l-grid-team-position">Pidana</div>
-                                </li> -->
-                                
-                                <!-- <li class="cbp-item pidana">
-                                    <a href="doctors/member3.html" class="cbp-caption cbp-singlePage">
-                                        <div class="cbp-caption-defaultWrap">
-                                            <img src="img/lawyer/lawyer4.png" alt="" width="100%">
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <div class="cbp-l-caption-text">VIEW PROFILE</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="doctors/member3" class="cbp-singlePage cbp-l-grid-team-name">Adnan Boyang</a>
-                                    <div class="cbp-l-grid-team-position">Pidana</div>
-                                </li>
-                                <li class="cbp-item pidana">
-                                    <a href="doctors/member3.html" class="cbp-caption cbp-singlePage">
-                                        <div class="cbp-caption-defaultWrap">
-                                            <img src="img/lawyer/lawyer4.png" alt="" width="100%">
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <div class="cbp-l-caption-text">VIEW PROFILE</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="doctors/member3" class="cbp-singlePage cbp-l-grid-team-name">Adnan Boyang</a>
-                                    <div class="cbp-l-grid-team-position">Pidana</div>
-                                </li> -->
+
                                 @endforeach
                             </ul>
-                            
                         </div>
 
                     </div>
@@ -211,9 +128,6 @@
     </div>
     <!-- Newsletter End -->
 
-
-
-
     <!-- Footer Start -->
     <div class="footer">
         <div class="container">
@@ -231,10 +145,10 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-link">
                                 <h2>Menu</h2>
-                                <a href="">Beranda</a>
-                                <a href="">Tentang</a>
-                                <a href="">Kontak</a>
-                                <a href="">Buat Perjanjian</a>
+                                <a href="/index">Beranda</a>
+                                <a href="/index">Tentang</a>
+                                <a href="/index">Kontak</a>
+                                <a href="/index">Buat Perjanjian</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">

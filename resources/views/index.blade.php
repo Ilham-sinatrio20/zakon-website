@@ -21,10 +21,24 @@
     <link rel="stylesheet" type="text/css" href="css/cubeportfolio.min.css">
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <style type="text/css">
+        #popup {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <div class="wrapper">
+        @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+        @endif
 
         <!-- Nav Bar Start -->
         <div class="nav-bar">
@@ -41,7 +55,6 @@
                             <a href="index" class="nav-item nav-link">BERANDA</a>
                             <a href="#about" class="nav-item nav-link">TENTANG</a>
                             <a href="#kontak" class="nav-item nav-link">KONTAK</a>
-                            <!-- <a class="btn" href="#perjanjian">BUAT PERJANJIAN</a> -->
                         </div>
                         <div class="ml-auto">
                             <a class="btn" href="#janji">BUAT PERJANJIAN</a>
@@ -90,7 +103,7 @@
                         <p class="animated fadeInRight">Percayakan kasus Anda dengan kami, pasti teratasi!</p>
                         <br><br>
 
-                        <form action="" method="get" class="cari-form">
+                        <form action="lawyer" method="get" class="cari-form">
                             <select class="form-control" id="jenis-hukum">
                                 <option value="">Pilih jenis hukum</option>
                                 <option value="ekonomi">Ekonomi</option>
@@ -111,7 +124,7 @@
                         <p class="animated fadeInRight">Percayakan kasus Anda dengan kami, pasti teratasi!</p>
                         <br><br>
 
-                        <form action="" method="get" class="cari-form">
+                        <form action="lawyer" method="get" class="cari-form">
                             <select class="form-control" id="jenis-hukum">
                                 <option value="">Pilih jenis hukum</option>
                                 <option value="ekonomi">Ekonomi</option>
@@ -136,7 +149,7 @@
         </div>
         <!-- Carousel End -->
 
-        <!-- Testimonial Start -->
+        <!-- Lawyer List Start -->
         <div class="testimonial">
             <div class="container">
                 <div class="section-header">
@@ -220,9 +233,9 @@
                 </div>
             </div>
         </div>
-        <!-- Testimonial End -->
+        <!-- Lawyer List End -->
 
-        <!-- FAQs Start -->
+        <!-- About Start -->
         <section id="about">
             <div class="faqs">
                 <div class="container">
@@ -276,7 +289,7 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <a class="card-link" data-toggle="collapse" href="#collapseFour">
-                                            <span>4</span> Lorem ipsum dolor sit amet?
+                                            <span>4</span> Apa saja kasus yang ditangani?
                                         </a>
                                     </div>
                                     <div id="collapseFour" class="collapse" data-parent="#accordion">
@@ -288,7 +301,7 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <a class="card-link" data-toggle="collapse" href="#collapseFive">
-                                            <span>5</span> Lorem ipsum dolor sit amet?
+                                            <span>5</span> Mengapa saya harus memilih lembaga ini?
                                         </a>
                                     </div>
                                     <div id="collapseFive" class="collapse" data-parent="#accordion">
@@ -304,15 +317,17 @@
                 </div>
             </div>
         </section>
-        <!-- FAQs End -->
+        <!-- About End -->
 
-        <!-- Testimonial Start -->
+        <!-- Review Client Start -->
         <div class="testimonial">
             <div class="container">
                 <div class="section-header">
                     <h2>REVIEW DARI KLIEN</h2>
                 </div>
                 <div class="owl-carousel testimonials-carousel">
+
+                    @foreach ($feedback as $respon)
                     <div class="testimonial-item">
                         <i class="fa fa-quote-right"></i>
                         <div class="row align-items-center">
@@ -320,124 +335,24 @@
                                 <img src="img/testimonial-1.jpg" alt="">
                             </div>
                             <div class="col-9">
-                                <h2>Client Name</h2>
-                                <p>Profession</p>
+                                <h2>{{ $respon -> nama_sender }}</h2>
+                                <p>{{ $respon -> email_sender }}</p>
                             </div>
                             <div class="col-12">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan lacus eget velit
+                                    {{ $respon -> pesan }}
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial-item">
-                        <i class="fa fa-quote-right"></i>
-                        <div class="row align-items-center">
-                            <div class="col-3">
-                                <img src="img/testimonial-2.jpg" alt="">
-                            </div>
-                            <div class="col-9">
-                                <h2>Client Name</h2>
-                                <p>Profession</p>
-                            </div>
-                            <div class="col-12">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan lacus eget velit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <i class="fa fa-quote-right"></i>
-                        <div class="row align-items-center">
-                            <div class="col-3">
-                                <img src="img/testimonial-3.jpg" alt="">
-                            </div>
-                            <div class="col-9">
-                                <h2>Client Name</h2>
-                                <p>Profession</p>
-                            </div>
-                            <div class="col-12">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan lacus eget velit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <i class="fa fa-quote-right"></i>
-                        <div class="row align-items-center">
-                            <div class="col-3">
-                                <img src="img/testimonial-4.jpg" alt="">
-                            </div>
-                            <div class="col-9">
-                                <h2>Client Name</h2>
-                                <p>Profession</p>
-                            </div>
-                            <div class="col-12">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan lacus eget velit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <i class="fa fa-quote-right"></i>
-                        <div class="row align-items-center">
-                            <div class="col-3">
-                                <img src="img/testimonial-1.jpg" alt="">
-                            </div>
-                            <div class="col-9">
-                                <h2>Client Name</h2>
-                                <p>Profession</p>
-                            </div>
-                            <div class="col-12">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan lacus eget velit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <i class="fa fa-quote-right"></i>
-                        <div class="row align-items-center">
-                            <div class="col-3">
-                                <img src="img/testimonial-2.jpg" alt="">
-                            </div>
-                            <div class="col-9">
-                                <h2>Client Name</h2>
-                                <p>Profession</p>
-                            </div>
-                            <div class="col-12">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan lacus eget velit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <i class="fa fa-quote-right"></i>
-                        <div class="row align-items-center">
-                            <div class="col-3">
-                                <img src="img/testimonial-3.jpg" alt="">
-                            </div>
-                            <div class="col-9">
-                                <h2>Client Name</h2>
-                                <p>Profession</p>
-                            </div>
-                            <div class="col-12">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan lacus eget velit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
-        <!-- Testimonial End -->
+        <!-- Review Client End -->
 
-        <!-- contact -->
+        <!-- Contact Start -->
         <div id="kontak" class="contact">
             <div class="container">
                 <div class="row">
@@ -452,27 +367,28 @@
                     <div class="row">
 
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <form class="contact_bg">
+                            <form action="{{ url('add.feedback') }}" method="POST" class="contact_bg">
+                                @csrf
                                 <div class="row">
                                     <div class="col-md-12">
 
                                         <div class="col-md-12">
-                                            <input class="contactus" placeholder="Nama lengkap" type="text" name="nama">
+                                            <input class="contactus" placeholder="Nama lengkap" type="text" name="nama_sender" required>
                                         </div>
                                         <div class="col-md-12">
-                                            <input class="contactus" placeholder="Email" type="text" name="Email">
+                                            <input class="contactus" placeholder="Email" type="email" name="email_sender" required>
                                         </div>
                                         <div class="col-md-12">
-                                            <input class="contactus" placeholder="Nomor telepon" type="text" name="nomor">
+                                            <input class="contactus" placeholder="Nomor telepon" type="text" name="phone_sender" required>
                                         </div>
                                         <div class="col-md-12">
-                                            <textarea class="textarea" placeholder="Pesan" type="text" name="pesan"></textarea>
+                                            <textarea class="textarea" placeholder="Pesan" type="text" name="pesan" required></textarea>
                                         </div>
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                             <button class="send">Kirim</button>
                                         </div>
                                     </div>
-                                <!-- </div> -->
+
                             </form>
                         </div>
                     </div>
@@ -484,10 +400,10 @@
                 </div>
             </div>
         </div>
-        <!-- end contact -->
+        <!-- Contact End -->
 
 
-        <!-- contact -->
+        <!--Transaction Start -->
         <section id="janji" class="contact">
             <div class="container">
                 <div class="row">
@@ -499,90 +415,194 @@
 
                 </div>
                 <div class="white_color">
-                    <div class="row">
 
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <form class="contact_bg">
-                                <div class="row">
-                                    <div class="col-md-12">
-
-                                        <div class="col-md-12">
-                                            <input class="contactus" placeholder="Nama lengkap" type="text" name="nama_lengkap">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <input class="contactus" placeholder="Email" type="text" name="Email">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <input class="contactus" placeholder="Nomor telepon" type="text" name="nomor_telepon">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <select class="contactus" id="jenis-hukum">
-                                                <option value="">Pilih jenis hukum</option>
-                                                <option value="ekonomi">Ekonomi</option>
-                                                <option value="keluarga">Keluarga</option>
-                                                <option value="pidana">Pidana</option>
-                                                <option value="tataNegara">Tata Negara</option>
-                                            </select>
-                                        </div>
-                                        <!-- <div class="col-md-12">
-                                        <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
-                                         </div> -->
-                                    </div>
-
-                            </form>
+                    <form action="" method="GET" class="contact_bg">
+                        <div class="col-md-12">
+                            <input class="cek-tiket" placeholder="Cek tiket" name="cari">
+                            <button type="submit" class="send" name="kirim">Cari</button>
                         </div>
-                    </div>
+                    </form>
+
+                    <?php
+                    if (isset($_GET['kirim'])) {
+                        $getValue = $_GET['cari'];
+
+                    ?>
+                        <script>
+                            window.location = '/<?php echo $getValue; ?>/hasilCari';
+                        </script>
+                    <?php
+                    }
+
+                    ?>
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <form class="contact_bg" action="{{ route('jadwalkan') }}" method="POST">
+                        <form action="{{ url('add.transaksi') }}" method="POST" class="contact_bg2" enctype="multipart/form-data">
+                        @csrf
                             <div class="row">
-                                <div class="col-md-12">
-                                    <div class="col-md-12">
-                                        <input class="contactus" placeholder="Pilih tanggal" type="datetime-local" name="tanggal">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <select class="contactus" id="jenis-hukum">
-                                            <option value="">Pilih pengacara</option>
-                                            <option value="Hotman Saris">Hotman Saris</option>
-                                            <option value="Adnan Boyang">Adnan Boyang</option>
-                                            <option value="Elsa Carif">Elsa Carif</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <select class="contactus" id="jenis-hukum">
-                                            <option value="">Pilih pertemuan</option>
-                                            <option value="online">Online</option>
-                                            <option value="offline">Offline</option>
-                                        </select>
-                                    </div>
+                                <div class="col-md-6">
+                                    <input class="contactus" placeholder="Nama lengkap" type="text" name="nama_klien" required>
+                                </div>
 
-                                    <div class="col-md-12">
-                                        <input type="checkbox" id="setuju" name="setuju" value="setuju">
-                                        <label for="setuju">Menyetujui ketentuan online & offline</label><br>
-                                    </div>
-                                    <br><br>
-                                    <form action="{{ route('cari.tiket') }}" method="POST">
-                                        @csrf
-                                        @method('GET')
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                            <button class="send">Cari</button>
-                                            <input class="cek-tiket" placeholder="Cek tiket" name="id_tiket">
+                                <div class="col-md-6">
+                                    <input class="contactus" placeholder="Email" type="email" name="email_klien" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input class="contactus" placeholder="Nomor telepon" type="text" name="phone" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <select class="contactus" id="jenis_hukum" name="jenis_hukum" required>
+                                        <option value="">Pilih jenis hukum</option>
+                                        <option value="ekonomi">Ekonomi</option>
+                                        <option value="keluarga">Keluarga</option>
+                                        <option value="pidana">Pidana</option>
+                                        <option value="negara">Negara</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <select class="contactus" id="pengacara" name="pengacara" required></select>
+                                </div>
+
+                                <!-- <div class="col-md-3">
+                                    <select class="contactus" id="id_pengacara" name="id_pengacara"></select>
+                                </div> -->
+
+                                <script type="text/javascript">
+                                    var pilihLawyer = {
+                                        ekonomi: ['@foreach($tampilEkonomi as $ek){{ $ek -> nama_lawyer }}', '@endforeach'],
+                                        keluarga: ['@foreach($tampilKeluarga as $kel){{ $kel -> nama_lawyer }}', '@endforeach'],
+                                        pidana: ['@foreach($tampilPidana as $pid){{ $pid -> nama_lawyer }}', '@endforeach'],
+                                        negara: ['@foreach($tampilNegara as $neg){{ $neg -> nama_lawyer }}', '@endforeach']
+                                    }
+
+                                    //Membuat variabel main dan sub sebagai wadah id select di atas
+                                    var main = document.getElementById('jenis_hukum');
+                                    var sub = document.getElementById('pengacara');
+                                    // var id = document.getElementById('id_pengacara');
+
+                                    // Men-trigger event ketika main terdapat perubahan
+                                    main.addEventListener('change', function() {
+
+                                        //Mendapatkan variabel pilihLawyer
+                                        var selected_option = pilihLawyer[this.value];
+
+                                        //removing the sub menu options using while loop
+                                        while (sub.options.length > 0) {
+
+                                            sub.options.remove(0);
+                                        }
+
+                                        //conver the selected object into array and create a options for each array elements
+                                        //using option constructor it will create html element with the given value and innerText
+                                        Array.from(selected_option).forEach(function(el) {
+
+                                            let option = new Option(el, el);
+
+                                            //append the child option in sub menu
+                                            sub.appendChild(option);
+
+                                        });
+
+                                    });
+                                </script>
+
+                                <div class="col-md-3">
+                                    <input class="contactus" placeholder="Pilih tanggal" type="date" name="tgl_meet" required>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input class="contactus" placeholder="Pilih waktu" type="time" name="waktu_meet" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <select class="contactus" id="jenis_meet" name="jenis_meet" required>
+                                        <option value="">Pilih pertemuan</option>
+                                        <option value="online">Online</option>
+                                        <option value="offline">Offline</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <textarea class="textarea" placeholder="Deskripsi sekilas kasus" type="text" name="deskripsi" required></textarea>
+                                </div>
+
+
+                                <div class="modal fade" id="contohModal" role="dialog" arialabelledby="modalLabel" area-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <!-- <img src="img/about.jpg" width="" height="" alt="..."> -->
+                                                <table>
+                                                    <tr>
+                                                        <td><b>Online</b></td>
+                                                        <td><b>Offline</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jaringan harus benar-benar stabil&nbsp;</td>
+                                                        <td>Klien datang ke kantor Zakon Law sesuai jam pertemuan</td><br>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Video camera wajib on</td>
+                                                        <td>Jam pertemuan offline sama dengan jam online</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Klien memasuki link zoom yang sudah dikirimkan oleh admin</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Pastikaan keadaan terbebas dari gangguan seperti keramaian dsb</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Durasi pertemuan menyesuaikan</td>
+                                                    </tr>
+
+                                                </table>
+                                            </div>
                                         </div>
-                                    </form>
-                                    <br><br><br><br>
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                        <button type="submit" class="send">Kirim</button>
                                     </div>
                                 </div>
+
+                                <!-- <button type="submit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#contohModal">Get Started</button> -->
+
+                                <div class="col-md-6">
+                                    <input type="checkbox" id="setuju" name="setuju" value="setuju" required>
+                                    <a href="" for="setuju" data-toggle="modal" data-target="#contohModal"><u>Menyetujui ketentuan online & offline</u></a><br>
+                                </div>
+                                <br><br>
+
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <button class="send">Kirim</button>
+                                </div>
+                                <br><br><br><br>
+
                             </div>
-                        </form>
                     </div>
+                    </form>
+
+
                 </div>
 
             </div>
         </section>
-
-        <!-- end contact -->
+        <!-- Transaction End -->
 
 
         <!-- Newsletter Start -->
@@ -591,16 +611,15 @@
                 <div class="section-header">
                     <h2>Ikuti Website Kami dan <br>Dapatkan info Terbaru</h2>
                 </div>
-                <div class="form">
-                    <input class="form-control" placeholder="Email here">
+
+                <form action="{{ url('add.email') }}" method="POST" class="form" enctype="multipart/form-data">
+                @csrf
+                    <input class="form-control" name="email_suscriber" placeholder="Ketik email anda">
                     <button class="btn">Submit</button>
-                </div>
+                </form>
             </div>
         </div>
         <!-- Newsletter End -->
-
-
-
 
         <!-- Footer Start -->
         <div class="footer">
@@ -616,23 +635,13 @@
                     </div>
                     <div class="col-md-6 col-lg-8">
                         <div class="row">
-                            <!-- <div class="col-md-6 col-lg-4">
-                            <div class="footer-link">
-                                <h2>Services Areas</h2>
-                                <a href="">Civil Law</a>
-                                <a href="">Family Law</a>
-                                <a href="">Business Law</a>
-                                <a href="">Education Law</a>
-                                <a href="">Immigration Law</a>
-                            </div>
-                        </div> -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="footer-link">
                                     <h2>Menu</h2>
-                                    <a href="">Beranda</a>
-                                    <a href="">Tentang</a>
-                                    <a href="">Kontak</a>
-                                    <a href="">Buat Perjanjian</a>
+                                    <a href="indeks">Beranda</a>
+                                    <a href="#about">Tentang</a>
+                                    <a href="#kontak">Kontak</a>
+                                    <a href="#janji">Buat Perjanjian</a>
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">
@@ -680,7 +689,6 @@
     </div>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>

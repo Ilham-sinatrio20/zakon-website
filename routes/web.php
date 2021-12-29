@@ -6,33 +6,22 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LawyerController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\LawyerFEController;
+use App\Http\Controllers\SuscriberController;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [LawyerFEController::class, 'indeks'])->name('index');
 
-Route::get('/index', function () {
-    return view('index');
-});
+Route::get('/index', [LawyerFEController::class, 'indeks'])->name('index');
 
-// Route::get('/lawyer', function () {
-//     return view('lawyer');
-// });
+Route::post('add.feedback', [FeedbackController::class, 'inputFeedback']);
 
-Route::get('lawyer/lawyer1', function () {
-    return view('lawyer.lawyer1');
-});
+Route::post('add.transaksi', [TransaksiController::class, 'inputsTicket']);
 
-// Route::get('detailLawyer', function () {
-//     return view('detailLawyer');
-// });
+Route::post('add.email', [SuscriberController::class, 'inputEmail']);
 
-Route::get('lawyer/lawyer2', function () {
-    return view('lawyer.lawyer2');
-});
+Route::get('/{id}/hasilCari', [TransaksiController::class, 'cari'])->name('hasilCari');
 
-Route::get('/lawyer', [LawyerFEController::class, 'index'])->name('lawyer');
+Route::get('/lawyer', [LawyerFEController::class, 'lawyer'])->name('lawyer');
 
 Route::get('/{id}/detailLawyer', [LawyerFEController::class, 'detail'])->name('detailLawyer');
 

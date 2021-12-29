@@ -18,10 +18,13 @@ class TransaksiFactory extends Factory {
             'nama_klien' => $this->faker->name,
             'email_klien' => $this->faker->email,
             'phone' => $this->faker->phoneNumber,
-            'tgl_meet' => $this->faker->dateTimeBetween('-2 years', 'now'),
-            'jenis_meet' => $this->faker->word,
-            'status' => $this->faker->word,
-            'keterangan' => $this->faker->sentences(4, true)
+            'jenis_hukum' => $this->faker->word(),
+            'tgl_meet' => $this->faker->date(),
+            'waktu_meet' => $this->faker->time(),
+            'jenis_meet' => $this->faker->word(),
+            'deskripsi' => $this->faker->sentences(8, true),
+            'keterangan' => $this->faker->sentences(4, true),
+            'status' => $this->faker->word()
         ];
     }
 }

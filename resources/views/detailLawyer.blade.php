@@ -51,7 +51,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="cbp-l-member-img">
-                            <img src="../img/lawyer/lawyer1.png" alt="">
+                            <img src="{{ $lawyer->picture }}" alt="">
                         </div>
                     </div>
 
@@ -75,7 +75,8 @@
                         <div id="grid-container" class="cbp-l-grid-team">
                             <ul>
                                 <li class="cbp-item biodata">
-                                    <!-- FAQs Start -->
+
+                                    <!-- Info Biodata Start -->
                                     <div class="faqs">
                                         <div class="container">
                                             <div class="row">
@@ -94,7 +95,7 @@
                                                                             <td>Nama</td>
                                                                             <td>:</td>
                                                                             <td> {{ $lawyer->nama_lawyer }}</td>
-                                                                        <!-- </tr>
+                                                                            <!-- </tr>
                                                                         <tr>
                                                                             <td>Jenis kelamin</td>
                                                                             <td>:</td>
@@ -104,12 +105,11 @@
                                                                             <td>Tempat/ Tgl Lahir</td>
                                                                             <td>:&nbsp;&nbsp;</td>
                                                                             <td> {{ $lawyer->place_birth }}, {{ $lawyer->date_birth }}</td>
-                                                                            <!-- <td>Nganjuk/ 19 November 1989</td> -->
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Kewarnegaraan</td>
                                                                             <td>:</td>
-                                                                            <td>Indonesia</td>
+                                                                            <td>{{ $lawyer->negara }}</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Alamat</td>
@@ -129,15 +129,9 @@
                                                             <div id="collapseTwo" class="collapse" data-parent="#accordion">
                                                                 <div class="card-body">
                                                                     <table>
-                                                                        <tr>
-                                                                            <td>2009 - 2013</td>
-                                                                            <td>:</td>
-                                                                            <td>S1 Jurusan Hukum Universitas Brawijaya</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>2014 - 2016</td>
-                                                                            <td>:</td>
-                                                                            <td>S2 Jurusan Hukum Universitas Gajah Mada</td>
+                                                                        <td>2014 - 2016</td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $lawyer->last_edu }}</td>
                                                                         </tr>
                                                                     </table>
                                                                 </div>
@@ -155,27 +149,17 @@
                                                                         <tr>
                                                                             <td>No. Telp</td>
                                                                             <td>:</td>
-                                                                            <td>085730945122</td>
+                                                                            <td>{{ $lawyer->phone}}</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>Fax</td>
+                                                                            <td>Email</td>
                                                                             <td>:</td>
-                                                                            <td>021-768-564</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Instagram</td>
-                                                                            <td>:</td>
-                                                                            <td>@hotmanSaris</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Twitter</td>
-                                                                            <td>:</td>
-                                                                            <td>@hotmanSaris</td>
+                                                                            <td>{{ $lawyer->email}}</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Website</td>
                                                                             <td>:</td>
-                                                                            <td>www.hotmanSaris.co.id</td>
+                                                                            <td>{{ $lawyer->website}}</td>
                                                                         </tr>
                                                                     </table>
                                                                 </div>
@@ -186,11 +170,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- FAQs End -->
                                 </li>
+                                <!-- Info Biodata End -->
 
+                                <!-- Info Daftar Kasus Start -->
                                 <li class="cbp-item daftarKasus">
-                                    <!-- FAQs Start -->
                                     <div class="faqs">
                                         <div class="container">
                                             <div class="row">
@@ -206,13 +190,7 @@
                                                                 <div class="card-body">
                                                                     <table>
                                                                         <tr>
-                                                                            <td>Kasus Artis x</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Kasus suap Kepala Desa Mojo</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Kasus kejahatan polisi gadungan</td>
+                                                                            <td>{{ $lawyer->pengalaman}}</td>
                                                                         </tr>
                                                                     </table>
                                                                 </div>
@@ -228,13 +206,7 @@
                                                                 <div class="card-body">
                                                                     <table>
                                                                         <tr>
-                                                                            <td>Kasus dukun cabul</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Kasus korupsi Bupati X</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Kasus korupsi Gubernur</td>
+                                                                            <td>{{ $lawyer->pengalaman}}</td>
                                                                         </tr>
                                                                     </table>
                                                                 </div>
@@ -250,13 +222,7 @@
                                                                 <div class="card-body">
                                                                     <table>
                                                                         <tr>
-                                                                            <td>Kasus korupsi Menteri</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Kasus tanah Abang</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Kasus proyek</td>
+                                                                            <td>{{ $lawyer->pengalaman}}</td>
                                                                         </tr>
                                                                     </table>
                                                                 </div>
@@ -267,8 +233,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- FAQs End -->
                                 </li>
+                                <!-- Info Daftar Kasus End -->
 
                             </ul>
                         </div>
@@ -311,10 +277,10 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="footer-link">
                                 <h2>Menu</h2>
-                                <a href="">Beranda</a>
-                                <a href="">Tentang</a>
-                                <a href="">Kontak</a>
-                                <a href="">Buat Perjanjian</a>
+                                <a href="/index">Beranda</a>
+                                <a href="/index">Tentang</a>
+                                <a href="/index">Kontak</a>
+                                <a href="/index">Buat Perjanjian</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
