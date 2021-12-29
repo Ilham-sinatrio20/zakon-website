@@ -26,6 +26,7 @@ class TransaksiRequest extends FormRequest {
         switch($this->method()){
             case 'POST': {
                 return [
+                    'jenis_hukum' => 'required|string',
                     'nama_klien' => 'required|string',
                     'nama_lawyer' => 'required|string',
                     'phone' => 'required|string|max:20',

@@ -1,5 +1,6 @@
 @section('optional')
     <link rel="stylesheet" href="../node_modules/prismjs/themes/prism.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection
 @extends('layouts.adminlayout')
 
@@ -103,7 +104,7 @@
                                     <td class="text-truncate">
                                         {{ $lawyers->nama_lawyer }}
                                         <div class="table-links d-flex justify-content-between">
-                                            <form action="{{ route('admin.delete', $lawyers->id) }}" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ route('admin.delete', $lawyers->id) }}" method="POST" enctype="multipart/form-data" onsubmit="return confirm('Are you sure to delete data?')">
                                                 <div class="bullet"></div>
                                                     <a href="{{ route('admin.detail', $lawyers->id) }}">Show Detail</a>
                                                 <div class="bullet"></div>
@@ -117,6 +118,29 @@
                                             </form>
                                         </div>
                                     </td>
+                                    <script>
+                                        function del(){
+                                            Swal.fire({
+                                                title: 'Are you sure?',
+                                                text: "You won't be able to revert this!",
+                                                icon: 'warning',
+                                                showCancelButton: true,
+                                                confirmButtonColor: '#3085d6',
+                                                cancelButtonColor: '#d33',
+                                                confirmButtonText: 'Yes, delete it!'
+                                                }).then((result) => {
+                                                if (result.isConfirmed) {
+                                                    Swal.fire(
+                                                        'Deleted!',
+                                                        'Your file has been deleted.',
+                                                        'success'
+                                                    )
+                                                } else {
+
+                                                }
+                                            })
+                                        }
+                                    </script>
                                     <td class="text-nowrap">
                                         {{ $lawyers->jenis_hukum }}
                                     </td>
@@ -160,7 +184,7 @@
                                     <td class="text-truncate">
                                         {{ $ekonom->nama_lawyer }}
                                         <div class="table-links d-flex justify-content-between">
-                                            <form action="{{ route('admin.delete', $ekonom->id) }}" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ route('admin.delete', $ekonom->id) }}" method="POST" enctype="multipart/form-data" onsubmit="return confirm('Are you sure to delete data?')">
                                                 <div class="bullet"></div>
                                                     <a href="{{ route('admin.detail', $ekonom->id) }}">Show Detail</a>
                                                 <div class="bullet"></div>
@@ -217,7 +241,7 @@
                                     <td class="text-truncate">
                                         {{ $family->nama_lawyer }}
                                         <div class="table-links d-flex justify-content-between">
-                                            <form action="{{ route('admin.delete', $family->id) }}" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ route('admin.delete', $family->id) }}" method="POST" enctype="multipart/form-data" onsubmit="return confirm('Are you sure to delete data?')">
                                                 <div class="bullet"></div>
                                                     <a href="{{ route('admin.detail', $family->id) }}">Show Detail</a>
                                                 <div class="bullet"></div>
@@ -274,7 +298,7 @@
                                     <td class="text-truncate">
                                         {{ $crime->nama_lawyer }}
                                         <div class="table-links d-flex justify-content-between">
-                                            <form action="{{ route('admin.delete', $crime->id) }}" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ route('admin.delete', $crime->id) }}" method="POST" enctype="multipart/form-data" onsubmit="return confirm('Are you sure to delete data?')">
                                                 <div class="bullet"></div>
                                                     <a href="{{ route('admin.detail', $crime->id) }}">Show Detail</a>
                                                 <div class="bullet"></div>
