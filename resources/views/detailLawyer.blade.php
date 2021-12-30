@@ -51,7 +51,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="cbp-l-member-img">
-                            <img src="{{ asset('images/lawyer/'.$lawyer->picture) }}" alt="">
+                            <img src="{{ $lawyer->picture }}" alt="">
                         </div>
                     </div>
 

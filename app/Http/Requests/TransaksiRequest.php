@@ -28,19 +28,16 @@ class TransaksiRequest extends FormRequest {
                 return [
                     'jenis_hukum' => 'required|string',
                     'nama_klien' => 'required|string',
-                    'email_klien' => 'required|email',
-                    'lawyer_id' => 'required',
+                    'nama_lawyer' => 'required|string',
                     'phone' => 'required|string|max:20',
                     'tgl_meet' => 'date|required',
-                    'waktu_meet' => 'required|date_format:H:i',
-                    'jenis_meet' => 'required|string',
-                    'deskripsi' => 'required|string'
+                    'keterangan' => 'required|string'
                 ];
             } break;
             case 'PUT': {
                 return [
                     'nama_klien' => 'sometimes|string',
-                    'lawyer_id' => 'sometimes|string',
+                    'nama_lawyer' => 'sometimes|string',
                     'phone' => 'sometimes|string|max:20',
                     'tgl_meet' => 'date|sometimes',
                     'keterangan' => 'sometimes|string'

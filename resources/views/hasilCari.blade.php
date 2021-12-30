@@ -34,12 +34,6 @@
     </style>
 </head>
 
-<style type="text/css" media="print">
-
-@page{ size: A4 landscape; margin: 2cm; }
-
-</style>
-
 <body>
     <div class="wrapper">
         @if(session()->has('message'))
@@ -72,7 +66,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="titlepage">
-                            <h2 id="titlePage">DETAIL PERJANJIAN</h2>
+                            <h2>DETAIL PERJANJIAN</h2>
                         </div>
                     </div>
 
@@ -84,6 +78,7 @@
                         <form action="{{ url('add.transaksi') }}" class="contact_bg2" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
+
                                 <div class="col-md-6">
                                     <p><b>Nama Lengkap</b></p>
                                     <div class="contactus">
@@ -109,13 +104,6 @@
                                     <p><b>Jenis hukum</b></p>
                                     <div class="contactus">
                                         <p>{{$transaksi->jenis_hukum}}</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <p><b>Nama Pengacara</b></p>
-                                    <div class="contactus">
-                                        <p>{{$transaksi->nama_lawyer}}</p>
                                     </div>
                                 </div>
 
@@ -156,20 +144,15 @@
 
                                 <div class="col-md-6">
                                     <p><b>Keterangan</b></p>
-                                    {{-- <div class="contactus"> --}}
-                                        <textarea class="contactus" name="keterangan" id="keterangan" readonly style="height: 100px">{{ $transaksi->keterangan }}</textarea>
-                                    {{-- </div> --}}
+                                    <div class="contactus">
+                                        <p>{{$transaksi->keterangan}}</p>
+                                    </div>
                                 </div>
 
                                 <script>
                                     function printContent(el) {
                                         // "<style type='text/css'>#btn-print{display:none;}</style>";
                                         document.getElementById("send").style.display = "none"
-                                        document.getElementById("keterangan").style.width = "500px"
-                                        document.getElementById("keterangan").style.border = "none"
-                                        document.getElementById("keterangan").style.color = "#666666"
-                                        document.getElementById("keterangan").style.margin = "0px 0px 0px 0px";
-                                        document.getElementById("titlePage").style.textAlign = "center";
                                         // document.getElementById("btn-print")
                                         var restorepage = document.body.innerHTML
                                         var printcontent = document.getElementById(el).innerHTML
@@ -185,6 +168,8 @@
                                 </div>
                             </div>
                     </div>
+
+
                     </form>
                 </div>
             </div>

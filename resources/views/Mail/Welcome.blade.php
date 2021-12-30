@@ -1,15 +1,12 @@
 @component('mail::message')
-# Transaksi Anda Sukses
+# Introduction
 
-Halo, {{ $email['nama_klien'] }}, <br><br>
-Dikarenakan anda sudah melakukan transaksi di website kami,
-maka kami mengirimkan feedback email ini untuk mencatat transaksi anda.
+The body of your message.
 
-Nama            : {{ $email['nama_klien'] }}<br>
-Tanggal Meeting : {{ $email['tgl_meet'] }}<br>
-Waktu Meeting   : {{ $email['waktu_meet'] }}<br>
-Jenis Meet      : {{ $email['jenis_meet'] }}<br>
+@component('mail::button', ['url' => ''])
+Button Text
+@endcomponent
 
-Terima Kasih,<br>
-Zakon Law
+Thanks,<br>
+{{ config('app.name') }}
 @endcomponent
