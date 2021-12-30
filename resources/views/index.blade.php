@@ -258,7 +258,7 @@
                                     </div>
                                     <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                         <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                            Lembaga kami sudah terdaftar di Kementerian Hukum dan Kementerian ketenagakerjaan sejak tahun 2015. Selain itu, kantor offline nya dapat dikunjungi di lokasi yang tertera di website
                                         </div>
                                     </div>
                                 </div>
@@ -270,7 +270,7 @@
                                     </div>
                                     <div id="collapseTwo" class="collapse" data-parent="#accordion">
                                         <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                            Dalam mencari pengacara, klien dapat melihat detail pengacara terlebih dahulu sesuai bidang hukum yang dipilih. Jika sudah, maka klien dapat mengisi perjanjian di bagian buat perjanjian untuk mendapatkan tiket perjanjian. Tiket yang telah terbuat dapat di cek di dalam fitur cek tiket
                                         </div>
                                     </div>
                                 </div>
@@ -282,7 +282,7 @@
                                     </div>
                                     <div id="collapseThree" class="collapse" data-parent="#accordion">
                                         <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                            Biaya pengacara dapat di negosiasi apabila sudah melakukan pertemuan via offline maupun online
                                         </div>
                                     </div>
                                 </div>
@@ -294,7 +294,7 @@
                                     </div>
                                     <div id="collapseFour" class="collapse" data-parent="#accordion">
                                         <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                            Secara umum, bidang hukum yang tersedia adalah bidang Ekonomi, Keluarga, Pidana, dan Negara. Untuk detail kasus per bidang, dapat dilihat di daftar pengacara
                                         </div>
                                     </div>
                                 </div>
@@ -306,12 +306,24 @@
                                     </div>
                                     <div id="collapseFive" class="collapse" data-parent="#accordion">
                                         <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
+                                            Lembaga ini sudah terdaftar di badan hukum. Selain itu, lembaga ini menaungi pengacara-pengacara handal yang merupakan lulusan universitas ternama dan juga berpengalaman dari kasus-kasus sebelumnya seperti yang terdapat di detail pengacara
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseSix">
+                                            <span>6</span> Apa saja yang dilakukan saat pertemuan?
+                                        </a>
+                                    </div>
+                                    <div id="collapseSix" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Pertemuan akan mendiskusikan terkait kasus yang diberikan, pengecekan pengacara yang dipilih, alur pendampingan, biaya dsb
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <a class="btn" href="">Ask more</a>
+                            <!-- <a class="btn" href="">Ask more</a> -->
                         </div>
                     </div>
                 </div>
@@ -629,7 +641,7 @@
                         <div class="footer-about">
                             <h2>About Us</h2>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu lectus a leo tristique dictum nec non quam. Suspendisse convallis, tortor eu placerat rhoncus, lorem quam iaculis felis, sed eleifend lacus neque id eros. Integer convallis volutpat neque
+                                Zakon Law merupakan lembaga yang memudahkan masyarakat dalam mencari pengacara-pengacara yang sesuai dengan kasus yang dialami.
                             </p>
                         </div>
                     </div>
@@ -647,9 +659,9 @@
                             <div class="col-md-6 col-lg-4">
                                 <div class="footer-contact">
                                     <h2>Get In Touch</h2>
-                                    <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
+                                    <p><i class="fa fa-map-marker-alt"></i>Jln Soekarno Hatta, Malang</p>
                                     <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
-                                    <p><i class="fa fa-envelope"></i>info@example.com</p>
+                                    <p><i class="fa fa-envelope"></i>zakonlaw@gmail.com</p>
                                     <div class="footer-social">
                                         <a href=""><i class="fab fa-twitter"></i></a>
                                         <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -675,7 +687,7 @@
             <div class="container copyright">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>&copy; <a href="">LawCorporate</a>, All Right Reserved.</p>
+                        <p>&copy; <a href="">ZakonLaw</a>, All Right Reserved.</p>
                     </div>
                     <div class="col-md-6">
                         <p>Designed By <a href="">RizqiIlham</a></p>
