@@ -92,6 +92,19 @@ class TransaksiController extends Controller {
 
         $trace->save();
 
+<<<<<<< HEAD
+        $transaksi = Transaksi::join('lawyer', 'transaksi.lawyer_id', '=', 'lawyer.id')->where('transaksi.id_transaksi', $trace->id_transaksi)->first();
+        $email = [
+            'nama_klien' => $transaksi->nama_klien,
+            'tgl_meet' => $transaksi->tgl_meet,
+            'waktu_meet' => $transaksi->waktu_meet,
+            'jenis_meet' => $transaksi->jenis_meet,
+            'nama_lawyer' => $transaksi->nama_lawyer,
+            'keterangan' => $transaksi->keterangan
+        ];
+        Mail::to($transaksi->email_klien)->queue(new WelcomeMail($email));
+        return $this->cari($trace->id_transaksi);
+=======
         // $email = [
         //     'nama_klien' => $tiket->nama_klien,
         //     'tgl_meet' => $tiket->tgl_meet
@@ -101,6 +114,7 @@ class TransaksiController extends Controller {
         
         // Mail::to($tiket->email)->queue(new WelcomeMail($email));
         return view('hasilCari', ['transaksi' => $transaksi]);
+>>>>>>> 1220a1479a0d7142afa27b7b7515254f07ad9b19
     }
 
     public function cari($id){

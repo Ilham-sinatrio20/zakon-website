@@ -33,7 +33,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="wrapper">
         @if(session()->has('message'))
@@ -110,7 +109,7 @@
                                 <div class="col-md-3">
                                     <p><b>Tanggal pertemuan</b></p>
                                     <div class="contactus">
-                                        <p>{{$transaksi->tgl_meet}}</p>
+                                        <p>{{ date('d-m-Y', strtotime($transaksi->tgl_meet)) }}</p>
                                     </div>
                                 </div>
 
