@@ -18,29 +18,30 @@
         <div class="table-responsive table-invoice">
             <table class="table table-striped">
                 <tr class="text-center align-middle">
-                    <th>Transaction ID</th>
+                    <th>No</th>
                     <th>Customer</th>
                     <th>Lawyer</th>
-                    <th>Jenis Meet</th>
                     <th>Status</th>
-                    <th>Due Date</th>
+                    <th>Date</th>
+                    <th>Jenis Meet</th>
                     <th>Action</th>
                 </tr>
+                <?php $i = 1; ?>
                 @foreach ($transaksi as $trans)
                 <tr>
-                    <td class="text-center align-middle"><a href="#">{{ $trans->id_transaksi }}</a></td>
+                    <td class="text-center align-middle"><a href="#">{{ $i++ }}</a></td>
                     <td class="font-weight-600">{{ $trans->nama_klien }}</td>
                     <td class="font-weight-600">{{ $trans->nama_lawyer }}</td>
                     @if($trans->status == "Verifikasi")
-                        <td><div class="badge badge-success">{{ $trans->status }}</div></td>
+                        <td><div class="badge badge-success text-center align-middle">{{ $trans->status }}</div></td>
                     @elseif ($trans->status == "Proses")
-                        <td><div class="badge badge-warning">{{ $trans->status }}</div></td>
+                        <td><div class="badge badge-warning text-center align-middle">{{ $trans->status }}</div></td>
                     @else
-                        <td><div class="badge badge-danger">{{ $trans->status }}</div></td>
+                        <td><div class="badge badge-danger text-center align-middle">{{ $trans->status }}</div></td>
                     @endif
-                        <td>{{ date('d-m-Y', strtotime($trans->tgl_meet)) }}</td>
+                        <td class="text-center align-middle">{{ date('d-m-Y', strtotime($trans->tgl_meet)) }}</td>
                         <td>{{ $trans->jenis_meet }}</td>
-                        <td><a href="{{ route('detail.transaksi', $trans->id_transaksi) }}" class="btn btn-primary">Detail</a></td>
+                        <td><a href="{{ route('detail.transaksi', $trans->id_transaksi) }}" class="btn btn-primary text-center align-middle">Detail</a></td>
                 </tr>
                 @endforeach
             </table>

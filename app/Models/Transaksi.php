@@ -18,7 +18,9 @@ class Transaksi extends Model {
         'nama_klien',
         'email_klien',
         'tgl_meet',
+        'waktu_meet',
         'status',
+        'deskripsi',
         'keterangan',
     ];
 

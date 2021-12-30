@@ -84,11 +84,10 @@
                         <div id="grid-container" class="cbp-l-grid-team">
                             <ul>
                                 @foreach ($lawyer as $lawyers)
-
                                 <li class="cbp-item {{ $lawyers->jenis_hukum }}">
                                     <a href="{{ route('detailLawyer', $lawyers->id) }}" class="cbp-caption">
                                         <div class="cbp-caption-defaultWrap">
-                                            <img src="{{ $lawyers->picture }}" alt="" width="100%">
+                                            <img src="{{ asset('images/lawyer/'.$lawyers->picture) }}" alt="" width="100%">
                                         </div>
                                         <div class="cbp-caption-activeWrap">
                                             <div class="cbp-l-caption-alignCenter">
