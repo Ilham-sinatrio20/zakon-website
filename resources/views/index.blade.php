@@ -335,12 +335,12 @@
                                 <img src="img/testimonial-1.jpg" alt="">
                             </div>
                             <div class="col-9">
-                                <h2>{{ $respon -> nama_sender }}</h2>
-                                <p>{{ $respon -> email_sender }}</p>
+                                <h2>{{ $respon->nama_sender }}</h2>
+                                <p>{{ $respon->email_sender }}</p>
                             </div>
                             <div class="col-12">
                                 <p>
-                                    {{ $respon -> pesan }}
+                                    {{ $respon->pesan }}
                                 </p>
                             </div>
                         </div>
@@ -437,7 +437,7 @@
                     ?>
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <form action="{{ url('add.transaksi') }}" method="POST" class="contact_bg2" enctype="multipart/form-data">
+                        <form action="{{ route('add-transaksi') }}" method="POST" class="contact_bg2" enctype="multipart/form-data">
                         @csrf
                             <div class="row">
                                 <div class="col-md-6">
@@ -449,7 +449,7 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <input class="contactus" placeholder="Nomor telepon" type="text" name="phone" required>
+                                    <input class="contactus" placeholder="Nomor telepon" type="tel" name="phone" required>
                                 </div>
                                 <div class="col-md-3">
                                     <select class="contactus" id="jenis_hukum" name="jenis_hukum" required>
@@ -457,13 +457,14 @@
                                         <option value="ekonomi">Ekonomi</option>
                                         <option value="keluarga">Keluarga</option>
                                         <option value="pidana">Pidana</option>
-                                        <option value="negara">Negara</option>
+                                        <option value="negara">Tata Negara</option>
                                     </select>
                                 </div>
-
+                                {{-- @foreach ($lawyer as $lawyers) --}}
                                 <div class="col-md-3">
                                     <select class="contactus" id="pengacara" name="pengacara" required></select>
                                 </div>
+                                {{-- @endforeach --}}
 
                                 <!-- <div class="col-md-3">
                                     <select class="contactus" id="id_pengacara" name="id_pengacara"></select>
@@ -518,9 +519,9 @@
 
                                 <div class="col-md-6">
                                     <select class="contactus" id="jenis_meet" name="jenis_meet" required>
-                                        <option value="">Pilih pertemuan</option>
-                                        <option value="online">Online</option>
-                                        <option value="offline">Offline</option>
+                                        <option>Pilih pertemuan</option>
+                                        <option>Online</option>
+                                        <option>Offline</option>
                                     </select>
                                 </div>
 
