@@ -22,8 +22,8 @@ class CreateTransaksiTable extends Migration {
             $table->time('waktu_meet');
             $table->string('jenis_meet', 20);
             $table->longText('deskripsi');
-            $table->longText('keterangan')->nullable();;
-            $table->string('status', 35)->nullable();;
+            $table->longText('keterangan');
+            $table->string('status', 35);
             $table->timestamps();
 
             $table->foreign('lawyer_id')->references('id')->on('lawyer');

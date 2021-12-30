@@ -1,10 +1,9 @@
 @component('mail::message')
-# Transaksi Anda Sukses
+# Introduction
 
-Halo, {{ $email['nama_klien'] }}, <br><br>
-Dikarenakan anda sudah melakukan transaksi di website kami,
-maka kami mengirimkan feedback email ini untuk mencatat transaksi anda.
+The body of your message.
 
+<<<<<<< HEAD
 <table class="table table-bordered">
     <tbody>
         <tr class="align-middle">
@@ -29,7 +28,12 @@ maka kami mengirimkan feedback email ini untuk mencatat transaksi anda.
         </tr>
     </tbody>
 </table>
+=======
+@component('mail::button', ['url' => ''])
+Button Text
+@endcomponent
+>>>>>>> 1220a1479a0d7142afa27b7b7515254f07ad9b19
 
-Terima Kasih,<br>
-Zakon Law
+Thanks,<br>
+{{ config('app.name') }}
 @endcomponent

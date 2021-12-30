@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Barryvdh\DomPDF\PDF;
 use App\Mail\WelcomeMail;
-use RealRashid\SweetAlert\Facades\Alert;
 
 class TransaksiController extends Controller {
     // public function __construct() {
@@ -79,10 +78,9 @@ class TransaksiController extends Controller {
     }
 
     public function inputsTicket(Request $tiket) {
-        // $tiket->validated();
+        $tiket->validated();
         $trace = new Transaksi;
         $trace->lawyer_id = Lawyer::where('nama_lawyer', $tiket->pengacara)->value('id');
-        // $trace->lawyer_id = $tiket->lawyer_id;
         $trace->nama_klien = $tiket->nama_klien;
         $trace->email_klien = $tiket->email_klien;
         $trace->phone = $tiket->phone;
@@ -91,9 +89,10 @@ class TransaksiController extends Controller {
         $trace->waktu_meet = $tiket->waktu_meet;
         $trace->jenis_meet = $tiket->jenis_meet;
         $trace->deskripsi = $tiket->deskripsi;
-        $trace->status = "Proses";
+
         $trace->save();
 
+<<<<<<< HEAD
         $transaksi = Transaksi::join('lawyer', 'transaksi.lawyer_id', '=', 'lawyer.id')->where('transaksi.id_transaksi', $trace->id_transaksi)->first();
         $email = [
             'nama_klien' => $transaksi->nama_klien,
@@ -105,11 +104,22 @@ class TransaksiController extends Controller {
         ];
         Mail::to($transaksi->email_klien)->queue(new WelcomeMail($email));
         return $this->cari($trace->id_transaksi);
+=======
+        // $email = [
+        //     'nama_klien' => $tiket->nama_klien,
+        //     'tgl_meet' => $tiket->tgl_meet
+        // ];
+
+        $transaksi = Transaksi::where('waktu_meet', $tiket->waktu_meet)->first();
+        
+        // Mail::to($tiket->email)->queue(new WelcomeMail($email));
+        return view('hasilCari', ['transaksi' => $transaksi]);
+>>>>>>> 1220a1479a0d7142afa27b7b7515254f07ad9b19
     }
 
     public function cari($id){
-        $transaksi = Transaksi::join('lawyer', 'transaksi.lawyer_id', '=', 'lawyer.id')->where('transaksi.id_transaksi', $id)->first();
+        $transaksi = Transaksi::where('id_transaksi', $id)->first();
         return view('hasilCari', ['transaksi' => $transaksi]);
     }
-
+    
 }

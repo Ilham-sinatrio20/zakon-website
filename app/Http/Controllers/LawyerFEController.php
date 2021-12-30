@@ -43,10 +43,10 @@ class LawyerFEController extends Controller {
         $tampilEkonomi = Lawyer::where('jenis_hukum', 'Ekonomi')->get();
         $tampilKeluarga = Lawyer::where('jenis_hukum', 'Keluarga')->get();
         $tampilPidana = Lawyer::where('jenis_hukum', 'Pidana')->get();
-        $tampilNegara = Lawyer::where('jenis_hukum', 'Tata Negara')->get();
-        return view('index', ['lawyer' => $lawyer, 'transaksi' => $transaksi,
+        $tampilNegara = Lawyer::where('jenis_hukum', 'Negara')->get();
+        return view('index', ['lawyer' => $lawyer, 'transaksi' => $transaksi, 
         'feedback' => $feedback, 'count' => $count, 'tampilEkonomi' => $tampilEkonomi,
-        'tampilKeluarga' => $tampilKeluarga, 'tampilPidana' => $tampilPidana,
+        'tampilKeluarga' => $tampilKeluarga, 'tampilPidana' => $tampilPidana, 
         'tampilNegara' => $tampilNegara]);
     }
 

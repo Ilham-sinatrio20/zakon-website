@@ -65,7 +65,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="titlepage">
-                            <h2 id="titlePage">DETAIL PERJANJIAN</h2>
+                            <h2>DETAIL PERJANJIAN</h2>
                         </div>
                     </div>
 
@@ -77,6 +77,7 @@
                         <form action="{{ url('add.transaksi') }}" class="contact_bg2" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
+
                                 <div class="col-md-6">
                                     <p><b>Nama Lengkap</b></p>
                                     <div class="contactus">
@@ -102,13 +103,6 @@
                                     <p><b>Jenis hukum</b></p>
                                     <div class="contactus">
                                         <p>{{$transaksi->jenis_hukum}}</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <p><b>Nama Pengacara</b></p>
-                                    <div class="contactus">
-                                        <p>{{$transaksi->nama_lawyer}}</p>
                                     </div>
                                 </div>
 
@@ -149,20 +143,15 @@
 
                                 <div class="col-md-6">
                                     <p><b>Keterangan</b></p>
-                                    {{-- <div class="contactus"> --}}
-                                        <textarea class="contactus" name="keterangan" id="keterangan" readonly style="height: 100px">{{ $transaksi->keterangan }}</textarea>
-                                    {{-- </div> --}}
+                                    <div class="contactus">
+                                        <p>{{$transaksi->keterangan}}</p>
+                                    </div>
                                 </div>
 
                                 <script>
                                     function printContent(el) {
                                         // "<style type='text/css'>#btn-print{display:none;}</style>";
                                         document.getElementById("send").style.display = "none"
-                                        document.getElementById("keterangan").style.width = "500px"
-                                        document.getElementById("keterangan").style.border = "none"
-                                        document.getElementById("keterangan").style.color = "#666666"
-                                        document.getElementById("keterangan").style.margin = "0px 0px 0px 0px";
-                                        document.getElementById("titlePage").style.textAlign = "center";
                                         // document.getElementById("btn-print")
                                         var restorepage = document.body.innerHTML
                                         var printcontent = document.getElementById(el).innerHTML
@@ -178,6 +167,8 @@
                                 </div>
                             </div>
                     </div>
+
+
                     </form>
                 </div>
             </div>
@@ -193,7 +184,7 @@
                         <div class="footer-about">
                             <h2>About Us</h2>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu lectus a leo tristique dictum nec non quam. Suspendisse convallis, tortor eu placerat rhoncus, lorem quam iaculis felis, sed eleifend lacus neque id eros. Integer convallis volutpat neque
+                                Zakon Law merupakan lembaga yang memudahkan masyarakat dalam mencari pengacara-pengacara yang sesuai dengan kasus yang dialami.
                             </p>
                         </div>
                     </div>
@@ -202,18 +193,18 @@
                             <div class="col-md-6 col-lg-4">
                                 <div class="footer-link">
                                     <h2>Menu</h2>
-                                    <a href="/index">Beranda</a>
-                                    <a href="/index">Tentang</a>
-                                    <a href="/index">Kontak</a>
-                                    <a href="/index">Buat Perjanjian</a>
+                                    <a href="indeks">Beranda</a>
+                                    <a href="#about">Tentang</a>
+                                    <a href="#kontak">Kontak</a>
+                                    <a href="#janji">Buat Perjanjian</a>
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">
                                 <div class="footer-contact">
                                     <h2>Get In Touch</h2>
-                                    <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
+                                    <p><i class="fa fa-map-marker-alt"></i>Jln Soekarno Hatta, Malang</p>
                                     <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
-                                    <p><i class="fa fa-envelope"></i>info@example.com</p>
+                                    <p><i class="fa fa-envelope"></i>zakonlaw@gmail.com</p>
                                     <div class="footer-social">
                                         <a href=""><i class="fab fa-twitter"></i></a>
                                         <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -239,7 +230,7 @@
             <div class="container copyright">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>&copy; <a href="">LawCorporate</a>, All Right Reserved.</p>
+                        <p>&copy; <a href="">ZakonLaw</a>, All Right Reserved.</p>
                     </div>
                     <div class="col-md-6">
                         <p>Designed By <a href="">RizqiIlham</a></p>
