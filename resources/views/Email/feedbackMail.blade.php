@@ -1,11 +1,12 @@
 @component('mail::message')
 # Response for Your Feedback
 
-Hi! {{ $mail['nama_sender'] }}, <br><br>
-Thanks your feedback for our website. We hope that your feedback will be useful for us to
-improve our service <br>
+Hai! {{ $mail['nama_sender'] }}, <br><br>
+Terima kasih telah mengirim masukkan ke website kami, kamih harap
+masukkan ini bisa berguna dalam pengembangan pelayanan yang
+kami lakukan<br>
 
-Thanks,<br>
+Terima Kasih,<br>
 Zakon Law
 @endcomponent
 

@@ -103,9 +103,7 @@ class TransaksiController extends Controller {
             'nama_lawyer' => $transaksi->nama_lawyer,
             'keterangan' => $transaksi->keterangan
         ];
-        Alert::success('Transaksi Berhasil', 'Silahkan Cetak Tiket');
         Mail::to($transaksi->email_klien)->queue(new WelcomeMail($email));
-
         return $this->cari($trace->id_transaksi);
     }
 
