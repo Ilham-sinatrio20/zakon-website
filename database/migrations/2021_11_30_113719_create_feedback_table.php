@@ -18,6 +18,7 @@ class CreateFeedbackTable extends Migration
             $table->string('nama_sender', 100)->nullable();
             $table->string('email_sender', 50)->nullable();
             $table->string('phone_sender', 20);
+            $table->string('rating');
             $table->longText('pesan');
             $table->timestamps();
         });

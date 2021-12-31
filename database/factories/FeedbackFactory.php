@@ -17,6 +17,7 @@ class FeedbackFactory extends Factory
             'nama_sender' => $this->faker->name(),
             'email_sender' => $this->faker->email(),
             'phone_sender' => $this->faker->phoneNumber(),
+            'rating' => $this->faker->numberBetween(1, 5),
             'pesan' => $this->faker->sentences(7, true)
         ];
     }

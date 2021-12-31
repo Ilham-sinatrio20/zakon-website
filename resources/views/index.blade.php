@@ -24,6 +24,7 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
 
     <style type="text/css">
         #popup {
@@ -355,6 +356,9 @@
                                     {{ $respon -> pesan }}
                                 </p>
                             </div>
+                            <div class="col-12">
+                                <input data-value="{{ $respon->rating }}" name="rating" id="rating" data-role="rating" data-star-color="yellow" data-stared-color="yellow">
+                            </div>
                         </div>
                     </div>
                     @endforeach
@@ -396,9 +400,14 @@
                                         <div class="col-md-12">
                                             <textarea class="textarea" placeholder="Pesan" type="text" name="pesan" required></textarea>
                                         </div>
+                                        <div class="col-md-12">
+                                            <label for="rating" class="contactus no-border" style="margin-bottom: 0">Beri Rating</label>
+                                            <input class="contactus no-border" name="rating" id="rating" data-role="rating" data-star-color="yellow" data-stared-color="yellow">
+                                        </div>
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                             <button class="send">Kirim</button>
                                         </div>
+
                                     </div>
 
                             </form>
@@ -736,7 +745,7 @@
     <!-- google map js -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
     <!-- end google map js -->
-
+    <script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
 
 </body>
 

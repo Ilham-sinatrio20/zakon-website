@@ -9,7 +9,7 @@ class SuscriberController extends Controller
 {
     //
     public function inputEmail(Request $email) {
-        $email ->validated();
+        // $email ->validated();
         $trace = new Suscriber;
         $trace->email_suscriber = $email -> email_suscriber;
 

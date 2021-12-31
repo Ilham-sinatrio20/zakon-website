@@ -74,7 +74,7 @@
 
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
 
-                        <form action="{{ url('add.transaksi') }}" class="contact_bg2" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('add-transaksi') }}" class="contact_bg2" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
 
@@ -91,7 +91,6 @@
                                         <p>{{$transaksi->email_klien}}</p>
                                     </div>
                                 </div>
-
                                 <div class="col-md-6">
                                     <p><b>Nomor telepon klien</b></p>
                                     <div class="contactus">
@@ -134,12 +133,12 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <p><b>Status</b></p>
                                     <div class="contactus">
                                         <p>{{$transaksi->status}}</p>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="col-md-6">
                                     <p><b>Keterangan</b></p>

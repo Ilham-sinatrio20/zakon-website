@@ -15,7 +15,7 @@ Route::get('/index', [LawyerFEController::class, 'indeks'])->name('index');
 
 Route::post('add.feedback', [FeedbackController::class, 'inputFeedback']);
 
-Route::post('add.transaksi', [TransaksiController::class, 'inputsTicket']);
+Route::post('add.transaksi', [TransaksiController::class, 'inputsTicket'])->name('add-transaksi');
 
 Route::post('add.email', [SuscriberController::class, 'inputEmail']);
 

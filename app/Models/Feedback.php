@@ -16,6 +16,7 @@ class Feedback extends Model {
         'email_sender',
         'phone_sender',
         'pesan',
+        'rating',
         'created_at',
         'updated_at'
     ];
