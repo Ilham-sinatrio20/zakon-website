@@ -74,10 +74,10 @@
 
                         <div id="filters-container" class="cbp-l-filters-alignLeft">
                             <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">Semua (<div class="cbp-filter-counter"></div>)</div>
-                            <div data-filter=".ekonomi" class="cbp-filter-item">Ekonomi (<div class="cbp-filter-counter"></div>)</div>
-                            <div data-filter=".keluarga" class="cbp-filter-item">Keluarga (<div class="cbp-filter-counter"></div>)</div>
-                            <div data-filter=".pidana" class="cbp-filter-item">Pidana (<div class="cbp-filter-counter"></div>)</div>
-                            <div data-filter=".tataNegara" class="cbp-filter-item">Tata Negara (<div class="cbp-filter-counter"></div>)</div>
+                            <div data-filter=".Ekonomi" class="cbp-filter-item">Ekonomi (<div class="cbp-filter-counter"></div>)</div>
+                            <div data-filter=".Keluarga" class="cbp-filter-item">Keluarga (<div class="cbp-filter-counter"></div>)</div>
+                            <div data-filter=".Pidana" class="cbp-filter-item">Pidana (<div class="cbp-filter-counter"></div>)</div>
+                            <div data-filter=".Negara" class="cbp-filter-item">Tata Negara (<div class="cbp-filter-counter"></div>)</div>
                         </div>
 
 
